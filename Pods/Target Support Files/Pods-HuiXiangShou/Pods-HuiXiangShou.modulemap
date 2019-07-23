@@ -1,0 +1,6 @@
+module Pods_HuiXiangShou {
+  umbrella header "Pods-HuiXiangShou-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,1 @@
+/Users/chenheng/Desktop/HuiXiangShou/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h
