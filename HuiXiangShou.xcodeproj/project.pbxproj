@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0677FD22E8AC58002C9D27 /* CommonUseDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0677FC22E8AC58002C9D27 /* CommonUseDefine.swift */; };
 		7F16773B22E693E500245E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16773A22E693E500245E9D /* AppDelegate.swift */; };
 		7F16773D22E693E500245E9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16773C22E693E500245E9D /* ViewController.swift */; };
 		7F16774022E693E500245E9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F16773E22E693E500245E9D /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		073E330317639642D3CCAFC2 /* Pods-HuiXiangShou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuiXiangShou.release.xcconfig"; path = "Target Support Files/Pods-HuiXiangShou/Pods-HuiXiangShou.release.xcconfig"; sourceTree = "<group>"; };
+		7C0677FC22E8AC58002C9D27 /* CommonUseDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUseDefine.swift; sourceTree = "<group>"; };
 		7F16773722E693E500245E9D /* HuiXiangShou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuiXiangShou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F16773A22E693E500245E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F16773C22E693E500245E9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C0677FB22E8AC3A002C9D27 /* CommonUseDefine */ = {
+			isa = PBXGroup;
+			children = (
+				7C0677FC22E8AC58002C9D27 /* CommonUseDefine.swift */,
+			);
+			path = CommonUseDefine;
+			sourceTree = "<group>";
+		};
 		7F16772E22E693E500245E9D = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 				7F16773A22E693E500245E9D /* AppDelegate.swift */,
 				7F16773C22E693E500245E9D /* ViewController.swift */,
 				7F16773E22E693E500245E9D /* Main.storyboard */,
+				7C0677FB22E8AC3A002C9D27 /* CommonUseDefine */,
 				7F16774122E693E700245E9D /* Assets.xcassets */,
 				7F16774322E693E700245E9D /* LaunchScreen.storyboard */,
 				7F16774622E693E700245E9D /* Info.plist */,
@@ -77,7 +88,6 @@
 				DCA812D2AE6DA97D961BB477 /* Pods-HuiXiangShou.debug.xcconfig */,
 				073E330317639642D3CCAFC2 /* Pods-HuiXiangShou.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -186,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C0677FD22E8AC58002C9D27 /* CommonUseDefine.swift in Sources */,
 				7F16773D22E693E500245E9D /* ViewController.swift in Sources */,
 				7F16773B22E693E500245E9D /* AppDelegate.swift in Sources */,
 			);
