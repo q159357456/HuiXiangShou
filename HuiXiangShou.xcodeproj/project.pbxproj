@@ -8,23 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		7C0677FD22E8AC58002C9D27 /* CommonUseDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0677FC22E8AC58002C9D27 /* CommonUseDefine.swift */; };
+		7C12BFC522ECA13500AFD0A3 /* ConstantDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFC422ECA13500AFD0A3 /* ConstantDefine.swift */; };
+		7C12BFC822ECA29000AFD0A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFC722ECA29000AFD0A3 /* HomeViewController.swift */; };
+		7C12BFCA22ECA29A00AFD0A3 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFC922ECA29A00AFD0A3 /* ShopViewController.swift */; };
+		7C12BFCC22ECA2BF00AFD0A3 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFCB22ECA2BF00AFD0A3 /* StoreViewController.swift */; };
+		7C12BFCE22ECA2D600AFD0A3 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFCD22ECA2D600AFD0A3 /* MineViewController.swift */; };
+		7C12BFD022ED390500AFD0A3 /* QGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFCF22ED390500AFD0A3 /* QGNavigationController.swift */; };
+		7C12BFD222ED390E00AFD0A3 /* QGTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD122ED390E00AFD0A3 /* QGTabbarController.swift */; };
+		7C12BFD522ED3ADF00AFD0A3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD422ED3ADF00AFD0A3 /* BaseViewController.swift */; };
+		7C12BFD822ED421B00AFD0A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD722ED421B00AFD0A3 /* LoginViewController.swift */; };
+		7C12BFDA22ED95D600AFD0A3 /* LIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD922ED95D600AFD0A3 /* LIButton.swift */; };
+		7C12BFDE22EDBAA700AFD0A3 /* HotComboView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFDD22EDBAA700AFD0A3 /* HotComboView.swift */; };
+		7CD3C18D22EC9508007640AB /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3C18C22EC9508007640AB /* UILabelExtension.swift */; };
 		7F16773B22E693E500245E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16773A22E693E500245E9D /* AppDelegate.swift */; };
 		7F16773D22E693E500245E9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16773C22E693E500245E9D /* ViewController.swift */; };
 		7F16774022E693E500245E9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F16773E22E693E500245E9D /* Main.storyboard */; };
 		7F16774222E693E700245E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F16774122E693E700245E9D /* Assets.xcassets */; };
-		7F16774522E693E700245E9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F16774322E693E700245E9D /* LaunchScreen.storyboard */; };
 		AD4940F9C24DBD898D6B24C5 /* libPods-HuiXiangShou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2288061EA3238A02DC149A /* libPods-HuiXiangShou.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		073E330317639642D3CCAFC2 /* Pods-HuiXiangShou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuiXiangShou.release.xcconfig"; path = "Target Support Files/Pods-HuiXiangShou/Pods-HuiXiangShou.release.xcconfig"; sourceTree = "<group>"; };
 		7C0677FC22E8AC58002C9D27 /* CommonUseDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUseDefine.swift; sourceTree = "<group>"; };
+		7C12BFC422ECA13500AFD0A3 /* ConstantDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantDefine.swift; sourceTree = "<group>"; };
+		7C12BFC722ECA29000AFD0A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7C12BFC922ECA29A00AFD0A3 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		7C12BFCB22ECA2BF00AFD0A3 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		7C12BFCD22ECA2D600AFD0A3 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		7C12BFCF22ED390500AFD0A3 /* QGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QGNavigationController.swift; path = HuiXiangShou/NavgationController/QGNavigationController.swift; sourceTree = SOURCE_ROOT; };
+		7C12BFD122ED390E00AFD0A3 /* QGTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QGTabbarController.swift; path = HuiXiangShou/TabbarController/QGTabbarController.swift; sourceTree = SOURCE_ROOT; };
+		7C12BFD422ED3ADF00AFD0A3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7C12BFD722ED421B00AFD0A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7C12BFD922ED95D600AFD0A3 /* LIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIButton.swift; sourceTree = "<group>"; };
+		7C12BFDD22EDBAA700AFD0A3 /* HotComboView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotComboView.swift; sourceTree = "<group>"; };
+		7CD3C18C22EC9508007640AB /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		7F16773722E693E500245E9D /* HuiXiangShou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuiXiangShou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F16773A22E693E500245E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F16773C22E693E500245E9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7F16773F22E693E500245E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F16774122E693E700245E9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7F16774422E693E700245E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F16774622E693E700245E9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C2288061EA3238A02DC149A /* libPods-HuiXiangShou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HuiXiangShou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA812D2AE6DA97D961BB477 /* Pods-HuiXiangShou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuiXiangShou.debug.xcconfig"; path = "Target Support Files/Pods-HuiXiangShou/Pods-HuiXiangShou.debug.xcconfig"; sourceTree = "<group>"; };
@@ -46,9 +68,72 @@
 			isa = PBXGroup;
 			children = (
 				7C0677FC22E8AC58002C9D27 /* CommonUseDefine.swift */,
+				7CD3C18C22EC9508007640AB /* UILabelExtension.swift */,
+				7C12BFC422ECA13500AFD0A3 /* ConstantDefine.swift */,
+				7C12BFD922ED95D600AFD0A3 /* LIButton.swift */,
 			);
 			path = CommonUseDefine;
 			sourceTree = "<group>";
+		};
+		7C12BFC622ECA21D00AFD0A3 /* HomePageControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C12BFC722ECA29000AFD0A3 /* HomeViewController.swift */,
+				7C12BFC922ECA29A00AFD0A3 /* ShopViewController.swift */,
+				7C12BFCB22ECA2BF00AFD0A3 /* StoreViewController.swift */,
+				7C12BFCD22ECA2D600AFD0A3 /* MineViewController.swift */,
+				7C12BFDB22EDB4C400AFD0A3 /* Model */,
+				7C12BFDC22EDB4C400AFD0A3 /* View */,
+			);
+			path = HomePageControllers;
+			sourceTree = "<group>";
+		};
+		7C12BFD322ED3AD100AFD0A3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7C12BFD422ED3ADF00AFD0A3 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7C12BFD622ED41EC00AFD0A3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7C12BFD722ED421B00AFD0A3 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7C12BFDB22EDB4C400AFD0A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C12BFDC22EDB4C400AFD0A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C12BFDD22EDBAA700AFD0A3 /* HotComboView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CD3C18E22EC9F09007640AB /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				7C12BFD122ED390E00AFD0A3 /* QGTabbarController.swift */,
+			);
+			path = TabbarController;
+			sourceTree = SOURCE_ROOT;
+		};
+		7CD3C18F22EC9F09007640AB /* NavgationController */ = {
+			isa = PBXGroup;
+			children = (
+				7C12BFCF22ED390500AFD0A3 /* QGNavigationController.swift */,
+			);
+			path = NavgationController;
+			sourceTree = SOURCE_ROOT;
 		};
 		7F16772E22E693E500245E9D = {
 			isa = PBXGroup;
@@ -74,9 +159,13 @@
 				7F16773A22E693E500245E9D /* AppDelegate.swift */,
 				7F16773C22E693E500245E9D /* ViewController.swift */,
 				7F16773E22E693E500245E9D /* Main.storyboard */,
+				7C12BFD622ED41EC00AFD0A3 /* Login */,
+				7C12BFD322ED3AD100AFD0A3 /* Base */,
+				7C12BFC622ECA21D00AFD0A3 /* HomePageControllers */,
+				7CD3C18F22EC9F09007640AB /* NavgationController */,
+				7CD3C18E22EC9F09007640AB /* TabbarController */,
 				7C0677FB22E8AC3A002C9D27 /* CommonUseDefine */,
 				7F16774122E693E700245E9D /* Assets.xcassets */,
-				7F16774322E693E700245E9D /* LaunchScreen.storyboard */,
 				7F16774622E693E700245E9D /* Info.plist */,
 			);
 			path = HuiXiangShou;
@@ -132,6 +221,7 @@
 				TargetAttributes = {
 					7F16773622E693E500245E9D = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -158,7 +248,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F16774522E693E700245E9D /* LaunchScreen.storyboard in Resources */,
 				7F16774222E693E700245E9D /* Assets.xcassets in Resources */,
 				7F16774022E693E500245E9D /* Main.storyboard in Resources */,
 			);
@@ -196,9 +285,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C12BFDE22EDBAA700AFD0A3 /* HotComboView.swift in Sources */,
+				7C12BFCC22ECA2BF00AFD0A3 /* StoreViewController.swift in Sources */,
+				7C12BFD022ED390500AFD0A3 /* QGNavigationController.swift in Sources */,
+				7C12BFCE22ECA2D600AFD0A3 /* MineViewController.swift in Sources */,
+				7CD3C18D22EC9508007640AB /* UILabelExtension.swift in Sources */,
+				7C12BFD222ED390E00AFD0A3 /* QGTabbarController.swift in Sources */,
+				7C12BFD522ED3ADF00AFD0A3 /* BaseViewController.swift in Sources */,
 				7C0677FD22E8AC58002C9D27 /* CommonUseDefine.swift in Sources */,
+				7C12BFCA22ECA29A00AFD0A3 /* ShopViewController.swift in Sources */,
+				7C12BFC822ECA29000AFD0A3 /* HomeViewController.swift in Sources */,
 				7F16773D22E693E500245E9D /* ViewController.swift in Sources */,
+				7C12BFDA22ED95D600AFD0A3 /* LIButton.swift in Sources */,
 				7F16773B22E693E500245E9D /* AppDelegate.swift in Sources */,
+				7C12BFD822ED421B00AFD0A3 /* LoginViewController.swift in Sources */,
+				7C12BFC522ECA13500AFD0A3 /* ConstantDefine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,14 +312,6 @@
 				7F16773F22E693E500245E9D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7F16774322E693E700245E9D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7F16774422E693E700245E9D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -345,6 +438,7 @@
 			baseConfigurationReference = DCA812D2AE6DA97D961BB477 /* Pods-HuiXiangShou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54M9U65G5H;
 				INFOPLIST_FILE = HuiXiangShou/Info.plist;
@@ -355,6 +449,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.HuiXiangShou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +461,7 @@
 			baseConfigurationReference = 073E330317639642D3CCAFC2 /* Pods-HuiXiangShou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54M9U65G5H;
 				INFOPLIST_FILE = HuiXiangShou/Info.plist;
@@ -375,6 +472,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.HuiXiangShou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
