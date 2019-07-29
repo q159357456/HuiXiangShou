@@ -9,13 +9,18 @@
 import UIKit
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let navigationController: QGTabbarController? = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
+        window?.makeKeyAndVisible()
+        listenLoginStatus()
         return true
     }
 
@@ -40,7 +45,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
 }
 
+extension AppDelegate{
+    
+    func listenLoginStatus()  {
+         kNotification.addObserver(self, selector: #selector(loginChangeEvent), name: NSNotification.Name(rawValue: LoginChanel), object: nil)
+         kNotificationPost(name: LoginChanel)
+    }
+    
+    @objc func loginChangeEvent() {
+        
+        var viewController = self.window?.rootViewController
+        
+        if kUserDefaults.bool(forKey: LoginStatuKey)
+        {
+            
+            let tabbar = QGTabbarController()
+            self.window?.rootViewController = QGNavigationController(rootViewController: tabbar)
+            
+        }else
+        {
+            self.window?.rootViewController = LoginViewController()
+            
+        }
+        
+        if (viewController != nil) {
+            viewController = nil
+        }
+        
+        
+        
+    }
+    
+
+}

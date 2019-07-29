@@ -5,5 +5,7 @@ pod 'RxCocoa'
 pod 'RxDataSources'
 pod 'Moya/RxSwift'
 pod 'ObjectMapper'
+pod 'SnapKit'
+pod 'Kingfisher'
 target 'HuiXiangShou' do
 end
