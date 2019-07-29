@@ -141,3 +141,16 @@ func H_Scale(y:CGFloat) -> CGFloat {
     return Scale_Height * y
     
 }
+
+
+// MARK:- 自定义打印方法
+func HCLog<T>(_ message : T, file : String = #file, funcName : String = #function, lineNum : Int = #line) {
+    
+    #if DEBUG
+    
+    let fileName = (file as NSString).lastPathComponent
+    
+    print("\(fileName):(\(lineNum))-\(message)")
+    
+    #endif
+}

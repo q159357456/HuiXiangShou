@@ -12,12 +12,6 @@ class ViewController: UIViewController {
     fileprivate lazy var bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let button: UIButton = UIButton.init(type: .custom)
-        button.addTarget(self, action: #selector(btn1Click(btn:)), for: .touchUpInside)
-        button.backgroundColor = UIColor.red
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
-        button.center = self.view.center
-        self.view.addSubview(button)
         
     
         // Do any additional setup after loading the view.

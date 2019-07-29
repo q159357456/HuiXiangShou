@@ -13,6 +13,7 @@
 		7F16774022E693E500245E9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F16773E22E693E500245E9D /* Main.storyboard */; };
 		7F16774222E693E700245E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F16774122E693E700245E9D /* Assets.xcassets */; };
 		7F16774522E693E700245E9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F16774322E693E700245E9D /* LaunchScreen.storyboard */; };
+		7F16776222EADF3E00245E9D /* NetWorkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16776122EADF3E00245E9D /* NetWorkAPI.swift */; };
 		AD4940F9C24DBD898D6B24C5 /* libPods-HuiXiangShou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2288061EA3238A02DC149A /* libPods-HuiXiangShou.a */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		7F16774122E693E700245E9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F16774422E693E700245E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F16774622E693E700245E9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F16776122EADF3E00245E9D /* NetWorkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkAPI.swift; sourceTree = "<group>"; };
 		8C2288061EA3238A02DC149A /* libPods-HuiXiangShou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HuiXiangShou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA812D2AE6DA97D961BB477 /* Pods-HuiXiangShou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuiXiangShou.debug.xcconfig"; path = "Target Support Files/Pods-HuiXiangShou/Pods-HuiXiangShou.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,12 +76,29 @@
 				7F16773A22E693E500245E9D /* AppDelegate.swift */,
 				7F16773C22E693E500245E9D /* ViewController.swift */,
 				7F16773E22E693E500245E9D /* Main.storyboard */,
+				7F16776322EAE9F500245E9D /* Base */,
+				7F16776022EADF2400245E9D /* NetWork */,
 				7C0677FB22E8AC3A002C9D27 /* CommonUseDefine */,
 				7F16774122E693E700245E9D /* Assets.xcassets */,
 				7F16774322E693E700245E9D /* LaunchScreen.storyboard */,
 				7F16774622E693E700245E9D /* Info.plist */,
 			);
 			path = HuiXiangShou;
+			sourceTree = "<group>";
+		};
+		7F16776022EADF2400245E9D /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				7F16776122EADF3E00245E9D /* NetWorkAPI.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		7F16776322EAE9F500245E9D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		A76B8C2AF7E30DDCC86F8843 /* Pods */ = {
@@ -199,6 +218,7 @@
 				7C0677FD22E8AC58002C9D27 /* CommonUseDefine.swift in Sources */,
 				7F16773D22E693E500245E9D /* ViewController.swift in Sources */,
 				7F16773B22E693E500245E9D /* AppDelegate.swift in Sources */,
+				7F16776222EADF3E00245E9D /* NetWorkAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
