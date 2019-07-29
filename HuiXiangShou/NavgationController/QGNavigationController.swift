@@ -10,7 +10,7 @@ import UIKit
 
 class QGNavigationController: UINavigationController {
     override func viewDidLoad() {
-        self.navigationBar.barTintColor = UIColor.white
+        self.navigationBar.barTintColor =  MainColor
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

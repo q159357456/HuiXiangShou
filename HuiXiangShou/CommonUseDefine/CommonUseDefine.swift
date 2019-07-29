@@ -160,6 +160,8 @@ func HCLog<T>(_ message : T, file : String = #file, funcName : String = #functio
     print("\(fileName):(\(lineNum))-\(message)")
     
     #endif
+}
+
 
 //view catagory
 extension UIView{
@@ -246,5 +248,5 @@ extension UIView{
         }
     }
     
-    }
+    
 }

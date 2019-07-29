@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import UIKit
 let LoginChanel: String =  "LoginStatuChange"
 let LoginStatuKey: String = "LoginStatus"
+let MainColor: UIColor  = HEX(hexValue: 0x6EBB51)
 
 

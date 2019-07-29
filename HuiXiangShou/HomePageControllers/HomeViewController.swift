@@ -57,7 +57,7 @@ extension HomeViewController{
         thirdView.frame = CGRect(x: 0, y: secondView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH/4)
         forthView.frame = CGRect(x: 0, y: thirdView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
         fiveView.frame = CGRect(x: 0, y:forthView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH*2/3)
-        sixView.frame = CGRect(x: 0, y: fiveView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
+        sixView.frame = CGRect(x: 0, y: fiveView.maxY, width: SCREEN_WIDTH, height: W_Scale(x: 170+18*2)+20+80)
         oneView.backgroundColor = randomColor()
         secondView.backgroundColor = randomColor()
         thirdView.backgroundColor = randomColor()
@@ -116,6 +116,41 @@ extension HomeViewController{
             hot.backgroundColor = .red
             
         }
+        
+        
+        
+        
+        let v6_labe1: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH/2, height: 40))
+        
+        let v6_labe2: UILabel = UILabel(frame: CGRect(x: v6_labe1.maxX, y: 0, width: SCREEN_WIDTH/2, height: 40))
+        
+        let title: ThemeTitleView = ThemeTitleView(frame: CGRect(x: 0, y: v6_labe2.maxY, width: SCREEN_WIDTH, height: 40))
+        
+        let h: CGFloat = ProListTableViewCell.rowForHeight()
+        
+        let prolistView: ProListTableViewCell = ProListTableViewCell(frame: CGRect(x: 0, y: title.maxY, width: SCREEN_WIDTH, height: h))
+        
+        
+        sixView.addSubview(v6_labe1)
+        sixView.addSubview(v6_labe2)
+        sixView.addSubview(title)
+        sixView.addSubview(prolistView)
+        
+        title.label?.text = "超值抢购/限时秒杀"
+        title.backgroundColor = .yellow
+       
+        
+        v6_labe1.text = "正品保证"
+        v6_labe2.text = "假一赔十"
+        
+        v6_labe1.textAlignment = .center
+        v6_labe2.textAlignment = .center
+        
+        v6_labe1.textColor = .white
+        v6_labe2.textColor = .white
+        
+        v6_labe1.backgroundColor = MainColor
+        v6_labe2.backgroundColor = MainColor
         
         
     }
