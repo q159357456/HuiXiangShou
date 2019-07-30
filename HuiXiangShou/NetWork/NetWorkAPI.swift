@@ -8,3 +8,8 @@
 
 import Foundation
 import Moya
+enum ApiManager {
+    case login(username:String,password:String,token:String)
+}
+
+
