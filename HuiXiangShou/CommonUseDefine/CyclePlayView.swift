@@ -67,6 +67,21 @@ class CyclePlayView: UIView {
     //定时器
     internal var timer: Timer?
     
+    //collectionView滚动方向
+    internal lazy var scrollPosition : UICollectionView.ScrollPosition = {
+        switch self.direction{
+        case .top:
+            return UICollectionView.ScrollPosition.top
+        case .lelt:
+            return UICollectionView.ScrollPosition.left
+        case .bootom:
+            return UICollectionView.ScrollPosition.bottom
+        case .right:
+            return UICollectionView.ScrollPosition.right
+        }
+         
+    }()
+    
     //collectionView
     lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -130,9 +145,13 @@ class CycleDefautPicCell: UICollectionViewCell {
         return imagev
     }()
     
-//    override init(frame: CGRect) {
-//        
-//    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.contentView.addSubview(imagev)
+        imagev.snp.makeConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
