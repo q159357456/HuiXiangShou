@@ -54,7 +54,7 @@ extension HomeViewController{
         
         oneView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
         secondView.frame = CGRect(x: 0, y: oneView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
-        thirdView.frame = CGRect(x: 0, y: secondView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH/4)
+        thirdView.frame = CGRect(x: 0, y: secondView.maxY, width: SCREEN_WIDTH, height: W_Scale(x: 80))
         forthView.frame = CGRect(x: 0, y: thirdView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
         fiveView.frame = CGRect(x: 0, y:forthView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH*2/3)
         sixView.frame = CGRect(x: 0, y: fiveView.maxY, width: SCREEN_WIDTH, height: W_Scale(x: 170+18*2)+20+80)
@@ -65,6 +65,32 @@ extension HomeViewController{
         fiveView.backgroundColor = randomColor()
         sixView.backgroundColor = randomColor()
         scroView.contentSize = CGSize(width: SCREEN_WIDTH, height: sixView.maxY)
+        
+        let cycleImgV: CyclePlayView = CyclePlayView(frame: oneView.bounds, direction: .lelt)
+        cycleImgV.cycleViewContent = .imgModel
+        cycleImgV.pictures = ["placeHolder","placeHolder","placeHolder","placeHolder"];
+        cycleImgV.didClickAtIndex = { index in
+            print(index)
+        }
+        oneView.addSubview(cycleImgV)
+        
+        
+        
+        let v3_imagev: UIImageView = UIImageView(frame: CGRect(x: 15, y: W_Scale(x: 10), width: W_Scale(x: 60), height: W_Scale(x: 60)))
+        let line: UIView = UIView(frame: CGRect(x: v3_imagev.maxX+10, y: W_Scale(x: 20), width: 1, height: W_Scale(x: 40)))
+        line.backgroundColor = .lightGray
+        v3_imagev.backgroundColor = .red
+        let labes: [String] = ["222222", "333333", "444444","55555"]
+
+        let cycleLabelsV: CyclePlayView = CyclePlayView(frame:  CGRect(x: line.maxX+10, y: W_Scale(x: 10), width: thirdView.width - line.maxX - 20, height: W_Scale(x: 60)), direction: .bottom)
+        cycleLabelsV.cycleViewContent = .txtModel
+        cycleLabelsV.labels = labes
+        
+        
+        thirdView.addSubview(v3_imagev)
+        thirdView.addSubview(line)
+        thirdView.addSubview(cycleLabelsV)
+        
         
         let imagearr: [String] = ["placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder"];
         let titleearr: [String] = ["6666","666","6666","6666","666","666","666","666","6666","666"];
