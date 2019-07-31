@@ -7,5 +7,6 @@ pod 'Moya/RxSwift'
 pod 'ObjectMapper'
 pod 'SnapKit'
 pod 'Kingfisher'
+pod 'PromiseKit'
 target 'HuiXiangShou' do
 end

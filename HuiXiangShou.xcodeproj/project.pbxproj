@@ -18,6 +18,8 @@
 		7C12BFD822ED421B00AFD0A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD722ED421B00AFD0A3 /* LoginViewController.swift */; };
 		7C12BFDA22ED95D600AFD0A3 /* LIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD922ED95D600AFD0A3 /* LIButton.swift */; };
 		7C12BFDE22EDBAA700AFD0A3 /* HotComboView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFDD22EDBAA700AFD0A3 /* HotComboView.swift */; };
+		7C12BFE022F12E6400AFD0A3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFDF22F12E6400AFD0A3 /* UserModel.swift */; };
+		7C12BFE222F1474400AFD0A3 /* ObservableExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFE122F1474400AFD0A3 /* ObservableExtention.swift */; };
 		7CD3C18D22EC9508007640AB /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3C18C22EC9508007640AB /* UILabelExtension.swift */; };
 		7F16773B22E693E500245E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16773A22E693E500245E9D /* AppDelegate.swift */; };
 		7F16773D22E693E500245E9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16773C22E693E500245E9D /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 		7C12BFD722ED421B00AFD0A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7C12BFD922ED95D600AFD0A3 /* LIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIButton.swift; sourceTree = "<group>"; };
 		7C12BFDD22EDBAA700AFD0A3 /* HotComboView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotComboView.swift; sourceTree = "<group>"; };
+		7C12BFDF22F12E6400AFD0A3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		7C12BFE122F1474400AFD0A3 /* ObservableExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableExtention.swift; sourceTree = "<group>"; };
 		7CD3C18C22EC9508007640AB /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		7F16773722E693E500245E9D /* HuiXiangShou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuiXiangShou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F16773A22E693E500245E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				7C0677FC22E8AC58002C9D27 /* CommonUseDefine.swift */,
 				7C12BFC422ECA13500AFD0A3 /* ConstantDefine.swift */,
 				7CD3C18C22EC9508007640AB /* UILabelExtension.swift */,
+				7C12BFE122F1474400AFD0A3 /* ObservableExtention.swift */,
 				7C12BFD922ED95D600AFD0A3 /* LIButton.swift */,
 				7FEFEDF822EED2CF006FFC2A /* CyclePlayView.swift */,
 			);
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				7C12BFD722ED421B00AFD0A3 /* LoginViewController.swift */,
+				7C12BFDF22F12E6400AFD0A3 /* UserModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C12BFDE22EDBAA700AFD0A3 /* HotComboView.swift in Sources */,
+				7C12BFE022F12E6400AFD0A3 /* UserModel.swift in Sources */,
 				7C12BFCC22ECA2BF00AFD0A3 /* StoreViewController.swift in Sources */,
 				7C12BFD022ED390500AFD0A3 /* QGNavigationController.swift in Sources */,
 				7C12BFCE22ECA2D600AFD0A3 /* MineViewController.swift in Sources */,
@@ -326,6 +333,7 @@
 				7C12BFDA22ED95D600AFD0A3 /* LIButton.swift in Sources */,
 				7F16773B22E693E500245E9D /* AppDelegate.swift in Sources */,
 				7FEFEDF722EEBF03006FFC2A /* ThemeTitleView.swift in Sources */,
+				7C12BFE222F1474400AFD0A3 /* ObservableExtention.swift in Sources */,
 				7C12BFD822ED421B00AFD0A3 /* LoginViewController.swift in Sources */,
 				7C12BFC522ECA13500AFD0A3 /* ConstantDefine.swift in Sources */,
 			);
