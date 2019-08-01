@@ -35,12 +35,12 @@ extension ApiManager: TargetType{
     var task: Task {
         switch self {
         case .login(let request):
-             return .requestJSONEncodable(request)
+             return .requestData(request.toData())
         }
     }
     
     var headers: [String : String]? {
-        return [:]
+        return ["Content-Type": "application/json; charset=utf-8"]
     }
     
     

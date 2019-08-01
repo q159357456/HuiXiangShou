@@ -18,7 +18,6 @@ class HomeViewController: BaseViewController {
         setUI()
         let requset = RequestBaseModel()
         requset.dataList = DataList()
-//        requset.basedata = Basedata()
         requset.timestamp = StringTimeStamp
         requset.appid = Hxs_Appid
         requset.sign = "string"

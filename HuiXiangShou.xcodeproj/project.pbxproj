@@ -20,6 +20,7 @@
 		7C12BFDE22EDBAA700AFD0A3 /* HotComboView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFDD22EDBAA700AFD0A3 /* HotComboView.swift */; };
 		7C12BFE022F12E6400AFD0A3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFDF22F12E6400AFD0A3 /* UserModel.swift */; };
 		7C12BFE222F1474400AFD0A3 /* ObservableExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFE122F1474400AFD0A3 /* ObservableExtention.swift */; };
+		7C12BFE422F32FB100AFD0A3 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFE322F32FB100AFD0A3 /* StringExtention.swift */; };
 		7CD3C18D22EC9508007640AB /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3C18C22EC9508007640AB /* UILabelExtension.swift */; };
 		7F16773B22E693E500245E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16773A22E693E500245E9D /* AppDelegate.swift */; };
 		7F16773D22E693E500245E9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16773C22E693E500245E9D /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 		7C12BFDD22EDBAA700AFD0A3 /* HotComboView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotComboView.swift; sourceTree = "<group>"; };
 		7C12BFDF22F12E6400AFD0A3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		7C12BFE122F1474400AFD0A3 /* ObservableExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableExtention.swift; sourceTree = "<group>"; };
+		7C12BFE322F32FB100AFD0A3 /* StringExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
 		7CD3C18C22EC9508007640AB /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		7F16773722E693E500245E9D /* HuiXiangShou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuiXiangShou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F16773A22E693E500245E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				7CD3C18C22EC9508007640AB /* UILabelExtension.swift */,
 				7F6DA00022F294EA003D5386 /* UIviewExtension.swift */,
 				7F6DA00222F29564003D5386 /* DateExtension.swift */,
+				7C12BFE322F32FB100AFD0A3 /* StringExtention.swift */,
 				7C12BFE122F1474400AFD0A3 /* ObservableExtention.swift */,
 				7C12BFD922ED95D600AFD0A3 /* LIButton.swift */,
 				7FEFEDF822EED2CF006FFC2A /* CyclePlayView.swift */,
@@ -338,6 +341,7 @@
 				7CD3C18D22EC9508007640AB /* UILabelExtension.swift in Sources */,
 				7FEFEDF322EE8D7D006FFC2A /* ProListTableViewCell.swift in Sources */,
 				7C12BFD522ED3ADF00AFD0A3 /* BaseViewController.swift in Sources */,
+				7C12BFE422F32FB100AFD0A3 /* StringExtention.swift in Sources */,
 				7FEFEDFC22F01EA7006FFC2A /* NetWorkAPI.swift in Sources */,
 				7C0677FD22E8AC58002C9D27 /* CommonUseDefine.swift in Sources */,
 				7F6DA00122F294EA003D5386 /* UIviewExtension.swift in Sources */,
