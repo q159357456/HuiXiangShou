@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import Moya
 import ObjectMapper
 extension Observable {
     func mapObject<T: Mappable>(type: T.Type) -> Observable<T> {
@@ -16,7 +15,6 @@ extension Observable {
             //if response is a dictionary, then use ObjectMapper to map the dictionary
             //if not throw an error
             guard let dict = response as? [String: Any] else {
-            
                 throw RxSwiftMoyaError.ParseJSONError
             }
             
@@ -41,9 +39,9 @@ extension Observable {
     }
 }
 
-enum RxSwiftMoyaError: String {
+enum RxSwiftMoyaError: String{
     case ParseJSONError
     case OtherError
 }
 
-extension RxSwiftMoyaError: Swift.Error { }
+extension RxSwiftMoyaError: Swift.Error {}

@@ -9,44 +9,40 @@
 import Foundation
 import Moya
 enum ApiManager {
-    case login(username:String,password:String,token:String)
+    case login(request: String)
 }
 
 
 extension ApiManager: TargetType{
     var baseURL: URL {
-        return URL(string: HxsEndpoint)!
+        return URL(string: Hxs_EndPoint)!
     }
     
     var path: String {
-        switch self {
-        case .login(username: _, password: _, token: _):
-            return "66"
-        default:
-            return "666"
-            
-        }
+        return "/Login/AppUserLoginByPassword"
     }
     
     var method: Moya.Method {
-        return .get
+        
+        return .post
     }
+    
     
     var sampleData: Data {
         return "".data(using: String.Encoding.utf8)!
     }
     
     var task: Task {
-        return .requestPlain
+        switch self {
+        case .login(let request):
+             return .requestJSONEncodable(request)
+        }
     }
     
     var headers: [String : String]? {
-        return ["token" : "token"]
+        return [:]
     }
     
     
-    
 }
-
-
 

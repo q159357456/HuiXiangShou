@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-let HxsEndpoint: String = "https://"
+let Hxs_EndPoint = "http://api.qhbabu.cn/api"
+let Hxs_Appid = "125A5114C05F42908929B8629E4E7C6A"
 let LoginChanel: String =  "LoginStatuChange"
 let LoginStatuKey: String = "LoginStatus"
 let MainColor: UIColor  = HEX(hexValue: 0x6EBB51)

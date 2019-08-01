@@ -26,6 +26,11 @@
 		7F16774022E693E500245E9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F16773E22E693E500245E9D /* Main.storyboard */; };
 		7F16774222E693E700245E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F16774122E693E700245E9D /* Assets.xcassets */; };
 		7F16776622EE7E8300245E9D /* QGTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16776522EE7E8300245E9D /* QGTabbarController.swift */; };
+		7F6DA00122F294EA003D5386 /* UIviewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA00022F294EA003D5386 /* UIviewExtension.swift */; };
+		7F6DA00322F29564003D5386 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA00222F29564003D5386 /* DateExtension.swift */; };
+		7F6DA00522F2B4F2003D5386 /* Encipherment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA00422F2B4F2003D5386 /* Encipherment.swift */; };
+		7F6DA00922F2C149003D5386 /* RequestBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA00822F2C149003D5386 /* RequestBaseModel.swift */; };
+		7F6DA00B22F2C166003D5386 /* ResponseBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA00A22F2C166003D5386 /* ResponseBaseModel.swift */; };
 		7FEFEDF322EE8D7D006FFC2A /* ProListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF222EE8D7D006FFC2A /* ProListTableViewCell.swift */; };
 		7FEFEDF522EE8DC6006FFC2A /* ProCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */; };
 		7FEFEDF722EEBF03006FFC2A /* ThemeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF622EEBF03006FFC2A /* ThemeTitleView.swift */; };
@@ -57,6 +62,11 @@
 		7F16774122E693E700245E9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F16774622E693E700245E9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F16776522EE7E8300245E9D /* QGTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QGTabbarController.swift; sourceTree = "<group>"; };
+		7F6DA00022F294EA003D5386 /* UIviewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIviewExtension.swift; sourceTree = "<group>"; };
+		7F6DA00222F29564003D5386 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		7F6DA00422F2B4F2003D5386 /* Encipherment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encipherment.swift; sourceTree = "<group>"; };
+		7F6DA00822F2C149003D5386 /* RequestBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBaseModel.swift; sourceTree = "<group>"; };
+		7F6DA00A22F2C166003D5386 /* ResponseBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBaseModel.swift; sourceTree = "<group>"; };
 		7FEFEDF222EE8D7D006FFC2A /* ProListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProListTableViewCell.swift; sourceTree = "<group>"; };
 		7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCollectionViewCell.swift; sourceTree = "<group>"; };
 		7FEFEDF622EEBF03006FFC2A /* ThemeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTitleView.swift; sourceTree = "<group>"; };
@@ -84,9 +94,12 @@
 				7C0677FC22E8AC58002C9D27 /* CommonUseDefine.swift */,
 				7C12BFC422ECA13500AFD0A3 /* ConstantDefine.swift */,
 				7CD3C18C22EC9508007640AB /* UILabelExtension.swift */,
+				7F6DA00022F294EA003D5386 /* UIviewExtension.swift */,
+				7F6DA00222F29564003D5386 /* DateExtension.swift */,
 				7C12BFE122F1474400AFD0A3 /* ObservableExtention.swift */,
 				7C12BFD922ED95D600AFD0A3 /* LIButton.swift */,
 				7FEFEDF822EED2CF006FFC2A /* CyclePlayView.swift */,
+				7F6DA00422F2B4F2003D5386 /* Encipherment.swift */,
 			);
 			path = CommonUseDefine;
 			sourceTree = "<group>";
@@ -108,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				7C12BFD422ED3ADF00AFD0A3 /* BaseViewController.swift */,
+				7F6DA00822F2C149003D5386 /* RequestBaseModel.swift */,
+				7F6DA00A22F2C166003D5386 /* ResponseBaseModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -315,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C12BFDE22EDBAA700AFD0A3 /* HotComboView.swift in Sources */,
+				7F6DA00322F29564003D5386 /* DateExtension.swift in Sources */,
 				7C12BFE022F12E6400AFD0A3 /* UserModel.swift in Sources */,
 				7C12BFCC22ECA2BF00AFD0A3 /* StoreViewController.swift in Sources */,
 				7C12BFD022ED390500AFD0A3 /* QGNavigationController.swift in Sources */,
@@ -324,11 +340,15 @@
 				7C12BFD522ED3ADF00AFD0A3 /* BaseViewController.swift in Sources */,
 				7FEFEDFC22F01EA7006FFC2A /* NetWorkAPI.swift in Sources */,
 				7C0677FD22E8AC58002C9D27 /* CommonUseDefine.swift in Sources */,
+				7F6DA00122F294EA003D5386 /* UIviewExtension.swift in Sources */,
 				7F16776622EE7E8300245E9D /* QGTabbarController.swift in Sources */,
 				7FEFEDF522EE8DC6006FFC2A /* ProCollectionViewCell.swift in Sources */,
 				7FEFEDF922EED2CF006FFC2A /* CyclePlayView.swift in Sources */,
 				7C12BFCA22ECA29A00AFD0A3 /* ShopViewController.swift in Sources */,
+				7F6DA00922F2C149003D5386 /* RequestBaseModel.swift in Sources */,
 				7C12BFC822ECA29000AFD0A3 /* HomeViewController.swift in Sources */,
+				7F6DA00522F2B4F2003D5386 /* Encipherment.swift in Sources */,
+				7F6DA00B22F2C166003D5386 /* ResponseBaseModel.swift in Sources */,
 				7F16773D22E693E500245E9D /* ViewController.swift in Sources */,
 				7C12BFDA22ED95D600AFD0A3 /* LIButton.swift in Sources */,
 				7F16773B22E693E500245E9D /* AppDelegate.swift in Sources */,

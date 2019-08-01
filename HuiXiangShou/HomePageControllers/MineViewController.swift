@@ -7,13 +7,24 @@
 //
 
 import UIKit
-
+import RxSwift
 class MineViewController: BaseViewController {
-
+    fileprivate lazy var bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.red
+        let button: UIButton = UIButton.init(type: .custom)
+        button.backgroundColor = UIColor.yellow
+        button.setTitle("退出登录", for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
+        button.center = self.view.center
+        self.view.addSubview(button)
+        button.rx.tap.subscribe { (element) in
+            kUserDefaults.set(false, forKey: LoginStatuKey)
+            kNotificationPost(name: LoginChanel)
+            }.disposed(by: bag)
       
-
+       
         // Do any additional setup after loading the view.
     }
     

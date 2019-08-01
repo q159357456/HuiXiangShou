@@ -8,25 +8,41 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 import Moya
+import PromiseKit
+import RxCocoa
 class HomeViewController: BaseViewController {
     fileprivate lazy var bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-//        self.view.backgroundColor = UIColor.red
-//        let button: UIButton = UIButton.init(type: .custom)
-//        button.backgroundColor = UIColor.yellow
-//        button.setTitle("退出登录", for: .normal)
-//        button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
-//        button.center = self.view.center
-//        self.view.addSubview(button)
-//        button.rx.tap.subscribe { (element) in
-//            kUserDefaults.set(false, forKey: LoginStatuKey)
-//            kNotificationPost(name: LoginChanel)
-//        }.disposed(by: bag)
-    
+        let requset = RequestBaseModel()
+        requset.dataList = DataList()
+//        requset.basedata = Basedata()
+        requset.timestamp = StringTimeStamp
+        requset.appid = Hxs_Appid
+        requset.sign = "string"
+        requset.dataList?.mobile = "13326859806"
+        requset.dataList?.password = "123456"
+        print(requset.toJSONString() ?? "")
+        let reqs: String = requset.toJSONString()!
+        let provider = MoyaProvider<ApiManager>()
+        provider.request(.login(request: reqs)) { (result) in
+            switch result {
+            case let .success(response):
+                print(String(data: response.data, encoding: String.Encoding.utf8)!)
+                break
+            case let .failure(erro):
+                print(erro.errorDescription ?? "")
+                break
+            }
+            
+        }
+        
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 }
@@ -81,6 +97,7 @@ extension HomeViewController{
         line.backgroundColor = .lightGray
         v3_imagev.backgroundColor = .red
         let labes: [String] = ["222222", "333333", "444444","55555"]
+
         let cycleLabelsV: CyclePlayView = CyclePlayView(frame:  CGRect(x: line.maxX+10, y: W_Scale(x: 10), width: thirdView.width - line.maxX - 20, height: W_Scale(x: 60)), direction: .bottom)
         cycleLabelsV.cycleViewContent = .txtModel
         cycleLabelsV.labels = labes
@@ -189,5 +206,3 @@ extension HomeViewController{
         
     }
 }
-
-
