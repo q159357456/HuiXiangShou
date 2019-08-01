@@ -25,7 +25,17 @@ class LoginViewController: UIViewController {
             kNotificationPost(name: LoginChanel)
         }).disposed(by: bag)
         
-
+        let dic = ["age": 17, "username": "梅梅",
+                   "best_friend": ["age": 18, "username": "李雷"]]
+        
+            as [String : Any]
+        
+        let user: UserModel = UserModel()
+ 
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     

@@ -13,3 +13,40 @@ enum ApiManager {
 }
 
 
+extension ApiManager: TargetType{
+    var baseURL: URL {
+        return URL(string: HxsEndpoint)!
+    }
+    
+    var path: String {
+        switch self {
+        case .login(username: _, password: _, token: _):
+            return "66"
+        default:
+            return "666"
+            
+        }
+    }
+    
+    var method: Moya.Method {
+        return .get
+    }
+    
+    var sampleData: Data {
+        return "".data(using: String.Encoding.utf8)!
+    }
+    
+    var task: Task {
+        return .requestPlain
+    }
+    
+    var headers: [String : String]? {
+        return ["token" : "token"]
+    }
+    
+    
+    
+}
+
+
+

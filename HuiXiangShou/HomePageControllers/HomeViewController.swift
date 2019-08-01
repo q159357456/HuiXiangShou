@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Moya
 class HomeViewController: BaseViewController {
     fileprivate lazy var bag = DisposeBag()
     override func viewDidLoad() {
@@ -25,8 +26,7 @@ class HomeViewController: BaseViewController {
 //            kUserDefaults.set(false, forKey: LoginStatuKey)
 //            kNotificationPost(name: LoginChanel)
 //        }.disposed(by: bag)
-
-        
+    
         // Do any additional setup after loading the view.
     }
 }
@@ -81,7 +81,6 @@ extension HomeViewController{
         line.backgroundColor = .lightGray
         v3_imagev.backgroundColor = .red
         let labes: [String] = ["222222", "333333", "444444","55555"]
-
         let cycleLabelsV: CyclePlayView = CyclePlayView(frame:  CGRect(x: line.maxX+10, y: W_Scale(x: 10), width: thirdView.width - line.maxX - 20, height: W_Scale(x: 60)), direction: .bottom)
         cycleLabelsV.cycleViewContent = .txtModel
         cycleLabelsV.labels = labes
@@ -190,3 +189,5 @@ extension HomeViewController{
         
     }
 }
+
+

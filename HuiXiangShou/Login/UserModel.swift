@@ -7,7 +7,39 @@
 //
 
 import UIKit
-
-class UserModel: NSObject {
-
+import ObjectMapper
+class UserModel: Mappable {
+    var id: Int?
+    var title: String?
+    var body: String?
+    var userId: Int?
+    var subC: SubModel?
+    
+    
+    init() {
+        
+    }
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+    }
+    
+    
 }
+class SubModel: Mappable {
+    var name: String?
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        name <- map["name"]
+    }
+    
+    
+}
+
+

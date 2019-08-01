@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+let HxsEndpoint: String = "https://"
 let LoginChanel: String =  "LoginStatuChange"
 let LoginStatuKey: String = "LoginStatus"
 let MainColor: UIColor  = HEX(hexValue: 0x6EBB51)
