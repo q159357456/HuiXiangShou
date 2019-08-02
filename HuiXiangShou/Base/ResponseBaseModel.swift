@@ -9,5 +9,9 @@
 import UIKit
 
 class ResponseBaseModel: NSObject {
-
+    
+    var code: String?
+    var message: String?
+    
+    
 }

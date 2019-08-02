@@ -25,25 +25,26 @@ class HomeViewController: BaseViewController {
         requset.dataList?.password = "123456"
         print(requset.toJSONString() ?? "")
         let reqs: String = requset.toJSONString()!
-        let provider = MoyaProvider<ApiManager>()
-        provider.request(.login(request: reqs)) { (result) in
-            switch result {
-            case let .success(response):
-                print(String(data: response.data, encoding: String.Encoding.utf8)!)
-                break
-            case let .failure(erro):
-                print(erro.errorDescription ?? "")
-                break
-            }
-            
-        }
-        
+//        let provider = MoyaProvider<ApiManager>()
+//        provider.request(.login(request: reqs)) { (result) in
+//            switch result {
+//            case let .success(response):
+//                print(String(data: response.data, encoding: String.Encoding.utf8)!)
+//                break
+//            case let .failure(erro):
+//                print(erro.errorDescription ?? "")
+//                break
+//            }
+//
+//        }
         
         
         
         
         // Do any additional setup after loading the view.
     }
+    
+   
 }
 
  // MARK: - UI
