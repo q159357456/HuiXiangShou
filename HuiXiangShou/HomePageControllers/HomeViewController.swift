@@ -16,37 +16,10 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        let requset = RequestBaseModel()
-        requset.dataList = DataList()
-        requset.timestamp = StringTimeStamp
-        requset.appid = Hxs_Appid
-        requset.sign = "string"
-        requset.dataList?.mobile = "13326859806"
-        requset.dataList?.password = "123456"
-        print(requset.toJSONString() ?? "")
-        let reqs: String = requset.toJSONString()!
-//        let provider = MoyaProvider<ApiManager>()
-//        provider.request(.login(request: reqs)) { (result) in
-//            switch result {
-//            case let .success(response):
-//                print(String(data: response.data, encoding: String.Encoding.utf8)!)
-//                break
-//            case let .failure(erro):
-//                print(erro.errorDescription ?? "")
-//                break
-//            }
-//
-//        }
-        
-        
-        
-        
+     
         // Do any additional setup after loading the view.
     }
-    
-   
 }
-
  // MARK: - UI
 extension HomeViewController{
     

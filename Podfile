@@ -8,5 +8,6 @@ pod 'ObjectMapper'
 pod 'SnapKit'
 pod 'Kingfisher'
 pod 'PromiseKit'
+pod 'MBProgressHUD'
 target 'HuiXiangShou' do
 end

@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 enum ApiManager {
-    case login(request: String)
+    case AppUserLoginByPassword(request: String)
 }
 
 
@@ -19,7 +19,11 @@ extension ApiManager: TargetType{
     }
     
     var path: String {
-        return "/Login/AppUserLoginByPassword"
+        switch self {
+        case .AppUserLoginByPassword(_):
+           return "/Login/AppUserLoginByPassword"
+        }
+        
     }
     
     var method: Moya.Method {
@@ -34,7 +38,7 @@ extension ApiManager: TargetType{
     
     var task: Task {
         switch self {
-        case .login(let request):
+        case .AppUserLoginByPassword(let request):
              return .requestData(request.toData())
         }
     }

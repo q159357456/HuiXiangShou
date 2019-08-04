@@ -20,7 +20,7 @@ class MineViewController: BaseViewController {
         button.center = self.view.center
         self.view.addSubview(button)
         button.rx.tap.subscribe { (element) in
-            kUserDefaults.set(false, forKey: LoginStatuKey)
+            kUserDefaults.removeObject(forKey: TokenKey)
             kNotificationPost(name: LoginChanel)
             }.disposed(by: bag)
       

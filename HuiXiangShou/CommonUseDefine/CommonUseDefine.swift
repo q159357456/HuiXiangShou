@@ -173,7 +173,7 @@ public var StringTimeStamp: String{
 }
 
 public func Hfx_Sign(params: String) -> String{
-    let token: String = ""
+    let token: String = kUserDefaults.object(forKey: TokenKey) as! String
     let temp: String = "appid=\(Hxs_Appid)&timestamp=\(StringTimeStamp)&token=\(token)&\(params)"
     return temp.md5().uppercased()
     

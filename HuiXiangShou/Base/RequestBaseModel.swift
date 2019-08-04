@@ -24,11 +24,11 @@ class RequestBaseModel: Mappable {
     init() {
         
     }
-    var appid: String?
-    var timestamp: String?
+    var appid: String = Hxs_Appid
+    var timestamp: String = StringTimeStamp
     var sign: String?
-    var dataList: DataList?
-    var basedata: Basedata?
+    var dataList: DataList = DataList()
+    var basedata: Basedata = Basedata()
 
 }
 class DataList: Mappable {

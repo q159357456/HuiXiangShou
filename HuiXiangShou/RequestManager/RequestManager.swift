@@ -9,115 +9,55 @@
 import Foundation
 import Moya
 import PromiseKit
-//
-//func requestAPI<T>(_ provider: MoyaProvider<T>, _ target: T) -> Promise<[String: Any]> {
-//    return Promise(resolver: { (resolver) in
-//        provider.request(target, completion: { (result) in
-//            switch result{
-//            case let .success(response):
-//
-//            case let .failure(eroor):
-//                resolver.reject(eroor)
-//
-//            }
-//        })
-//    })
-//}
+import ObjectMapper
+func requestAPI<T>(_ provider: MoyaProvider<T>, _ target: T) -> Promise<[String: Any]?> {
+    return Promise(resolver: { (resolver) in
+        provider.request(target, completion: { (result) in
+            switch result{
+            case let .success(response):
+                let dic: [String: Any]? = response.data.toDic()
+                resolver.fulfill(dic ?? nil)
+            case let .failure(eroor):
+                resolver.reject(eroor)
 
-//func CallApi(_ target: ZhihuAPI, isCached: Bool = false) -> Promise<[String : Any]> {
-//
-//    let cacheKey = "dictionary:" + target.path
-//
-//    // 优先获取缓存
-//    if isCached, let jsonString = globalCache[cacheKey] {
-//        return Promise<[String : Any]> { fulfill, reject in
-//            do {
-//                let data = try JSONSerialization.jsonObject(with: jsonString.data(using: String.Encoding.utf8.rawValue)!, options: []) as? [String: Any]
-//
-//                print("fetch from cache")
-//                fulfill(data!)
-//            } catch {
-//                reject(error)
-//            }
-//        }
-//    }
-//
-//    let provider = MoyaProvider<ZhihuAPI>()
-//
-//    return Promise<[String : Any]> { fulfill, reject in
-//        provider.request(target, completion: { (result) in
-//            switch result {
-//            case let .success(response):
-//                do {
-//                    // 缓存
-//                    try globalCache.setObject(response.mapString() as NSString, forKey: cacheKey, expires: cacheExpireDate)
-//
-//                    print("fetch from request")
-//                    let data = try JSONSerialization.jsonObject(with: response.data, options: []) as! [String: Any]
-//                    fulfill(data)
-//                } catch {
-//                    reject(error)
-//                }
-//            case let .failure(error):
-//                reject(error)
-//            }
-//        })
-//    }
-//}
-//
-///// 调用接口，成功返回模型数组
-/////
-///// - Parameter target:
-///// - Returns:
-//func CallApi<T: HandyJSON>(_ target: ZhihuAPI) -> Promise<[T?]?> {
-//
-//    let provider = MoyaProvider<ZhihuAPI>()
-//
-//    return Promise<[T?]?> { fulfill, reject in
-//        provider.request(target, completion: { (result) in
-//            switch result {
-//            case let .success(response):
-//                do {
-//                    let data = try [T].deserialize(from: response.mapString())
-//                    fulfill(data)
-//                } catch {
-//                    reject(error)
-//                }
-//            case let .failure(error):
-//                reject(error)
-//            }
-//        })
-//    }
-//}
-//
-//
-///// 调用接口，成功返回模型
-/////
-///// - Parameter target:
-///// - Returns:
-//func CallApi<T: HandyJSON>(_ target: ZhihuAPI) -> Promise<T> {
-//
-//    let provider = MoyaProvider<ZhihuAPI>()
-//
-//    return Promise<T> { fulfill, reject in
-//        provider.request(target, completion: { (result) in
-//            switch result {
-//            case let .success(response):
-//                do {
-//                    let data = try T.deserialize(from: response.mapString())
-//                    fulfill(data!)
-//                } catch {
-//                    reject(error)
-//                }
-//            case let .failure(error):
-//                reject(error)
-//            }
-//        })
-//    }
-//}
+            }
+        })
+    })
+}
 
-//firstly { () -> Promise<[String: Any]> in
-//    return CallApi(ZhihuAPI.latest, isCached: true)
-//    }.then { [weak self] (result) -> Void in
-//        self?.textView.text = "\(result)"
-//}
+func requestAPI<T,U: Mappable>(_ provider: MoyaProvider<T>, _ target: T) -> Promise<U?> {
+    return Promise(resolver: { (resolver) in
+        provider.request(target, completion: { (result) in
+            switch result{
+            case let .success(reponse):
+                let dic: [String: Any]? = reponse.data.toDic()
+                guard let temp = dic?["data"] as? [String: Any], let temp1 = temp["data"] as? [String: Any] else{
+                    return
+                 
+                }
+                resolver.fulfill(Mapper<U>().map(JSON: temp1))
+            case let .failure(erro):
+                resolver.reject(erro)
+            }
+        })
+    })
+}
+
+func requestAPI<T,U: Mappable>(_ provider: MoyaProvider<T>, _ target: T) -> Promise<[U]?>{
+    return Promise(resolver: { (resolver) in
+        provider.request(target, completion: { (result) in
+            switch result{
+            case let .success(reponse):
+                let dic: [String: Any]? = reponse.data.toDic()
+                guard let temp = dic?["data"] as? [String: Any], let temp1 = temp["data"] as? [[String: Any]] else{
+                    return
+                }
+                resolver.fulfill(Mapper<U>().mapArray(JSONArray: temp1))
+            case let .failure(erro):
+                resolver.reject(erro)
+            }
+        })
+    })
+    
+}
+

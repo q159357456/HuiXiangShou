@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var userModel: UserModel?
     var window: UIWindow?
     let navigationController: QGTabbarController? = nil
 
@@ -60,16 +60,12 @@ extension AppDelegate{
         
         var viewController = self.window?.rootViewController
         
-        if kUserDefaults.bool(forKey: LoginStatuKey)
-        {
-            
+        if kUserDefaults.value(forKey: TokenKey) != nil {
             let tabbar = QGTabbarController()
             self.window?.rootViewController = QGNavigationController(rootViewController: tabbar)
-            
         }else
         {
-            self.window?.rootViewController = LoginViewController()
-            
+             self.window?.rootViewController = LoginViewController()
         }
         
         if (viewController != nil) {

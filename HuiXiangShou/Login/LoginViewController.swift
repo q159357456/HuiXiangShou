@@ -9,29 +9,43 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Moya
+import ObjectMapper
 class LoginViewController: UIViewController {
      fileprivate lazy var bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         let button: UIButton = UIButton.init(type: .custom)
-        //        button.addTarget(self, action: #selector(btn1Click(btn:)), for: .touchUpInside)
         button.backgroundColor = UIColor.red
         button.setTitle("登录", for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
         button.center = self.view.center
         self.view.addSubview(button)
         button.rx.tap.subscribe(onNext: { (element) in
-            kUserDefaults.set(true, forKey: LoginStatuKey)
-            kNotificationPost(name: LoginChanel)
+            let requset = RequestBaseModel()
+            requset.sign = "string"
+            requset.dataList.mobile = "13326859806"
+            requset.dataList.password = "123456"
+            let reqs: String = requset.toJSONString()!
+            let provider = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view),
+                                                              RequestCodeHnadlePlugin()])
+            _ = requestAPI(provider, .AppUserLoginByPassword(request: reqs)).done { (data) in
+            
+                guard let temp = data?["data"] as? [String: Any], let token = temp["token"] as? String else{
+                     return
+                }
+                kUserDefaults.set(token, forKey: TokenKey)
+                
+                guard let temp1 = data?["data"] as? [String: Any], let user = temp1["data"] as? [String: Any] else{
+                     return
+                }
+                kAppDelegate.userModel = Mapper<UserModel>().map(JSON: user)
+                kNotificationPost(name: LoginChanel)
+            }
+           
         }).disposed(by: bag)
         
-        let dic = ["age": 17, "username": "梅梅",
-                   "best_friend": ["age": 18, "username": "李雷"]]
-        
-            as [String : Any]
-        
-        let user: UserModel = UserModel()
- 
+     
         
         
         
