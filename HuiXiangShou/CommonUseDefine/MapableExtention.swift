@@ -11,19 +11,19 @@ import ObjectMapper
 extension Mappable{
     func toOrderJson() -> String? {
         let dic: [String: Any] = self.toJSON()
-        let keylist = dic.keys.sorted(by: {$0 < $1})
-        var result: String?
-        for ob in keylist{
-            if result == nil{
-                result =  "\"\(ob)\":\"\(dic[ob]!)\""
+        let keyValues = dic.sorted{$0.0 < $1.0}
+        var temp = [String]()
+        
+        for (key, value) in keyValues{
+            if value.self is Int {
+                 temp.append("\"\(key)\":\(value)")
             }else
             {
-                result =  "\(result ?? ""),\"\(ob)\":\"\(dic[ob]!)\""
+                 temp.append("\"\(key)\":\"\(value)\"")
             }
             
         }
-        result = "{\(result!)}"
-
+        let result = "{\(temp.joined(separator: ","))}"
         return result
         
       

@@ -175,7 +175,6 @@ public var StringTimeStamp: String{
 public func Hfx_Sign(params: String?, time: String) -> String?{
     let token: String = (kUserDefaults.object(forKey: TokenKey) as! String)
     var temp: String?
-    print("prams" , params!)
     if params != nil {
         temp = "appid=\(Hxs_Appid)&timestamp=\(time)&token=\(token)&\(params!)"
     }else

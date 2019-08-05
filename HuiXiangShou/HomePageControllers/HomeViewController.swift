@@ -16,26 +16,30 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        let provider = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view), RequestPrintResultPlugin(), RequestCodeHnadlePlugin()])
-    
-//        let base: RequestBaseModel = RequestBaseModel()
-//        base.sign = Hfx_Sign(params: nil, time: base.timestamp)
-//        _ = requestAPI(provider, .ShopShopClassifyList(request: base.toJSONString()!)).done({ (data) in
-//
-//        })
-//        _ = requestAPI(provider, .LoginStartAD).done({ (data) in
-//
-//        })
+        let provider = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view),  RequestCodeHnadlePlugin()])
+        let provider1 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view),  RequestCodeHnadlePlugin()])
+        let provider2 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view),  RequestCodeHnadlePlugin()])
         
-        let base: RequestBaseModel = RequestBaseModel()
-        base.basedata.para1 = "000001"
-        base.basedata.pagesize = 50
-        base.basedata.pageindex = 1
-   
-        base.sign = Hfx_Sign(params: base.basedata.toOrderJson(), time: base.timestamp)
-        _ = requestAPI(provider, .SysGetNoticeInfo(request: base.toJSONString()!)).done({ (data) in
-
-        })
+        let base1: RequestBaseModel = RequestBaseModel()
+        base1.sign = Hfx_Sign(params: nil, time: base1.timestamp)
+        
+        let base2: RequestBaseModel = RequestBaseModel()
+        base2.basedata.para1 = "000001"
+        base2.basedata.pagesize = 50
+        base2.basedata.pageindex = 1
+        base2.sign = Hfx_Sign(params: base2.basedata.toOrderJson(), time: base2.timestamp)
+        let pro1 = requestAPI(provider, .LoginStartAD)
+        let pro2 = requestAPI(provider1, .ShopShopClassifyList(request: base1.toJSONString()!))
+        let pro3 = requestAPI(provider2, .SysGetNoticeInfo(request: base2.toJSONString()!))
+        
+        _ = when(fulfilled: pro1, pro2, pro3).done { (data1,data2,data3) in
+            
+            print("data1: \(data1)")
+            print("data2: \(data2)")
+            print("data3: \(data3)")
+        }
+        
+    
         // Do any additional setup after loading the view.
     }
 }
