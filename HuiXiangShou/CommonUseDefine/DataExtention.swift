@@ -32,4 +32,22 @@ extension Data{
             return nil
         }
     }
+    
+    func toString() -> String? {
+      
+        return String(data: self, encoding: String.Encoding.utf8)
+    }
+    
+    func toDataString() -> String? {
+         return String(format: "%@", self as CVarArg)
+    }
+    
+    func tojson() -> AnyObject? {
+        do {
+            return try JSONSerialization.jsonObject(with: self , options: .allowFragments) as AnyObject
+        } catch {
+            print("tojsonErro: \(error)")
+        }
+        return nil
+    }
 }

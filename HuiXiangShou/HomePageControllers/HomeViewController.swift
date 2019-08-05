@@ -16,7 +16,26 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-     
+        let provider = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view), RequestPrintResultPlugin(), RequestCodeHnadlePlugin()])
+    
+//        let base: RequestBaseModel = RequestBaseModel()
+//        base.sign = Hfx_Sign(params: nil, time: base.timestamp)
+//        _ = requestAPI(provider, .ShopShopClassifyList(request: base.toJSONString()!)).done({ (data) in
+//
+//        })
+//        _ = requestAPI(provider, .LoginStartAD).done({ (data) in
+//
+//        })
+        
+        let base: RequestBaseModel = RequestBaseModel()
+        base.basedata.para1 = "000001"
+        base.basedata.pagesize = 50
+        base.basedata.pageindex = 1
+   
+        base.sign = Hfx_Sign(params: base.basedata.toOrderJson(), time: base.timestamp)
+        _ = requestAPI(provider, .SysGetNoticeInfo(request: base.toJSONString()!)).done({ (data) in
+
+        })
         // Do any additional setup after loading the view.
     }
 }

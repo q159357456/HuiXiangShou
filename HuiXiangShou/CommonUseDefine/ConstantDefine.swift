@@ -13,7 +13,7 @@ let Hxs_Appid = "125A5114C05F42908929B8629E4E7C6A"
 let LoginChanel: String =  "LoginStatuChange"
 let LoginStatuKey: String = "LoginStatus"
 let TokenKey: String = "hxs_Token_key"
-
+let Hxs_Shopid: String = "hxs_shopid"
 let MainColor: UIColor  = HEX(hexValue: 0x6EBB51)
 let WX_Key: String = ""
 let WX_Scret: String = ""

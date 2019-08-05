@@ -39,7 +39,13 @@ class LoginViewController: UIViewController {
                 guard let temp1 = data?["data"] as? [String: Any], let user = temp1["data"] as? [String: Any] else{
                      return
                 }
-                kAppDelegate.userModel = Mapper<UserModel>().map(JSON: user)
+               
+//                kAppDelegate.userModel = Mapper<UserModel>().map(JSON: user)
+                guard let shopid = user["MS001"] as? String else{
+                    return
+                }
+              
+                kUserDefaults.set(shopid, forKey: Hxs_Shopid)
                 kNotificationPost(name: LoginChanel)
             }
            

@@ -14,13 +14,16 @@ class RequestCodeHnadlePlugin: PluginType {
         switch result {
         case let .success(response):
             let dic = response.data.toDic()
-            if dic?["code"] as! Int != 0{
-                print("错误码: \(String(describing: dic?["code"]))  错误信息: \(String(describing: dic?["message"]))")
+            guard let code = dic?["code"] as? Int else{
                 return
             }
-            
-        default:
-            break
+            if code != 0{
+                print("错误码: \(String(describing: code))  错误信息: \(String(describing: dic?["message"]))")
+            }
+
+        case let .failure(erro):
+            print("erro: \(erro)")
+          
         }
     }
 }

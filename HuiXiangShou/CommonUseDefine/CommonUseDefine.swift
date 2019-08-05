@@ -167,15 +167,24 @@ func HCLog<T>(_ message : T, file : String = #file, funcName : String = #functio
 public var StringTimeStamp: String{
     let date: Date = Date()
     let datefomatter = DateFormatter()
-    datefomatter.dateFormat = "yyyyMMddHHmmss"
+    datefomatter.dateFormat = "yyyyMMddHHmmssSSS"
     return datefomatter.string(from: date)
     
 }
 
-public func Hfx_Sign(params: String) -> String{
-    let token: String = kUserDefaults.object(forKey: TokenKey) as! String
-    let temp: String = "appid=\(Hxs_Appid)&timestamp=\(StringTimeStamp)&token=\(token)&\(params)"
-    return temp.md5().uppercased()
+public func Hfx_Sign(params: String?, time: String) -> String?{
+    let token: String = (kUserDefaults.object(forKey: TokenKey) as! String)
+    var temp: String?
+    print("prams" , params!)
+    if params != nil {
+        temp = "appid=\(Hxs_Appid)&timestamp=\(time)&token=\(token)&\(params!)"
+    }else
+    {
+        temp = "appid=\(Hxs_Appid)&timestamp=\(time)&token=\(token)&{}"
+        
+    }
+    print(temp!)
+    return temp!.md5().uppercased()
     
 }
 
