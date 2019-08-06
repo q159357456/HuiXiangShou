@@ -38,7 +38,7 @@ class HomeViewController: BaseViewController {
             print("data2: \(data2)")
             print("data3: \(data3)")
         }
-        
+     
     
         // Do any additional setup after loading the view.
     }
