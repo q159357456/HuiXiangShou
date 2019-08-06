@@ -7,24 +7,35 @@
 //
 
 import UIKit
-
+import Kingfisher
 class ProCollectionViewCell: UICollectionViewCell {
     let imgView: UIImageView?
     let label1: UILabel?
     let label2: UILabel?
+    var proModel: ProductModel? {
+        
+        didSet{
+            self.imgView?.kf.setImage(with: URL(string: proModel?.PicAddress1 ?? ""))
+            self.label1?.text = proModel?.ProductName
+//            print("price  \(proModel?.RetailPrice ?? 0)")
+            self.label2?.text = "\(proModel?.RetailPrice ?? 0) \(proModel?.Bonus ?? 0)积分"
+        }
+    }
     
     override init(frame: CGRect) {
         imgView = UIImageView()
         label1 = UILabel()
         label2 = UILabel()
+        label1?.font = hxs_lightFont
+        label2?.font = hxs_lightFont
         super.init(frame: frame)
        
         self.contentView.addSubview(imgView!)
         self.contentView.addSubview(label1!)
         self.contentView.addSubview(label2!)
-        imgView?.backgroundColor = UIColor.red
-        label1?.backgroundColor = UIColor.red
-        label2?.backgroundColor = UIColor.red
+//        imgView?.backgroundColor = UIColor.red
+//        label1?.backgroundColor = UIColor.red
+//        label2?.backgroundColor = UIColor.red
         
         imgView?.snp.makeConstraints({ (make) in
             make.size.equalTo(CGSize(width: W_Scale(x: 170), height: W_Scale(x: 170)))

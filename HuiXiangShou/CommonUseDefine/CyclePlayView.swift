@@ -29,7 +29,7 @@ class CyclePlayView: UIView {
     
     //模式 纯文字 或者图片
     open var cycleViewContent: CycleViewContent = .imgModel
-  
+    open var scroEable: Bool = true
     //图片数据源
     open var pictures: [String] = [] {
         willSet{
@@ -203,6 +203,7 @@ class CyclePlayView: UIView {
              layout.scrollDirection = .horizontal
         }
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.width, height: self.height), collectionViewLayout: layout)
+        collectionView.isScrollEnabled = self.scroEable
         collectionView.showsHorizontalScrollIndicator = false
         
         collectionView.showsVerticalScrollIndicator = false
@@ -318,7 +319,7 @@ extension CyclePlayView: UICollectionViewDelegate, UICollectionViewDataSource {
             let cell = collectionView .dequeueReusableCell(withReuseIdentifier: NSStringFromClass(CycleLabelCell.classForCoder()), for: indexPath) as! CycleLabelCell
             
             cell.label?.text = self.datas?[indexPath.item]
-            
+            cell.label?.numberOfLines = 0
             return cell
             
      

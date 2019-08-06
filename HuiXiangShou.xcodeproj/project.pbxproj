@@ -129,9 +129,9 @@
 			children = (
 				7C12BFC722ECA29000AFD0A3 /* HomeViewController.swift */,
 				7C12BFC922ECA29A00AFD0A3 /* ShopViewController.swift */,
-				7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */,
 				7C12BFCB22ECA2BF00AFD0A3 /* StoreViewController.swift */,
 				7C12BFCD22ECA2D600AFD0A3 /* MineViewController.swift */,
+				7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */,
 				7C12BFDB22EDB4C400AFD0A3 /* Model */,
 				7C12BFDC22EDB4C400AFD0A3 /* View */,
 			);

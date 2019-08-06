@@ -39,13 +39,14 @@ class DataList: Mappable {
     func mapping(map: Map) {
         mobile <- map["mobile"]
         password <- map["password"]
-  
+        classifyno <- map["classifyno"]
     }
     init() {
         
     }
     var mobile: String?
     var password: String?
+    var classifyno: String?
 }
 
 class Basedata: Mappable {

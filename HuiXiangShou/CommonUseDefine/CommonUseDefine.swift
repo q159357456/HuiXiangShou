@@ -69,6 +69,13 @@ func kSystemFont(font: CGFloat) -> (UIFont) {
     return UIFont.systemFont(ofSize: font)
     
 }
+
+var hxs_lightFont: UIFont{
+    
+    return kSystemFont(font: W_Scale(x: 13))
+}
+
+
 func kGetImage(name: String) -> (UIImage)? {
     
     return UIImage.init(named: name)
@@ -172,6 +179,14 @@ public var StringTimeStamp: String{
     
 }
 
+public var StringTimeStampPluse: String{
+    let date: Date = Date()
+    let newdate: Date = date.addingTimeInterval(1)
+    let datefomatter = DateFormatter()
+    datefomatter.dateFormat = "yyyyMMddHHmmssSSS"
+    return datefomatter.string(from: newdate)
+}
+
 public func Hfx_Sign(params: String?, time: String) -> String?{
     let token: String = (kUserDefaults.object(forKey: TokenKey) as! String)
     var temp: String?
@@ -182,7 +197,6 @@ public func Hfx_Sign(params: String?, time: String) -> String?{
         temp = "appid=\(Hxs_Appid)&timestamp=\(time)&token=\(token)&{}"
         
     }
-    print(temp!)
     return temp!.md5().uppercased()
     
 }

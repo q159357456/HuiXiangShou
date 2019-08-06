@@ -13,6 +13,9 @@ enum ApiManager {
     case LoginStartAD
     case ShopShopClassifyList(request: String)
     case SysGetNoticeInfo(request: String)
+    case ProductGoodsList(request: String)
+    case ProductGoodsListByCondition(request: String)
+    case SysPlatformAmount(request: String)
 }
 
 
@@ -29,10 +32,17 @@ extension ApiManager: TargetType{
             return "/Login/StartAD"
         case .ShopShopClassifyList(_):
             return "/Shop/ShopClassifyList"
-            
         case .SysGetNoticeInfo(_):
             return "/Sys/GetNoticeInfo"
+        case .ProductGoodsList(_):
+            return "/Product/GoodsList"
+        case .ProductGoodsListByCondition(_):
+            return "/Product/GoodsListByCondition"
+        case .SysPlatformAmount(_):
+            return "/Sys/PlatformAmount"
+            
         }
+        
         
     }
     
@@ -40,11 +50,13 @@ extension ApiManager: TargetType{
     var method: Moya.Method {
         
         switch self {
-        case .AppUserLoginByPassword(_), .ShopShopClassifyList(_),.SysGetNoticeInfo(_):
-            return .post
         case .LoginStartAD:
             return .get
+        default:
+            return .post
         }
+        
+        
     }
     
     
@@ -55,7 +67,7 @@ extension ApiManager: TargetType{
 
     var task: Task {
         switch self {
-        case .AppUserLoginByPassword(let request),.ShopShopClassifyList(let request), .SysGetNoticeInfo(let request):
+        case .AppUserLoginByPassword(let request),.ShopShopClassifyList(let request), .SysGetNoticeInfo(let request), .ProductGoodsList(let request), .ProductGoodsListByCondition(let request), .SysPlatformAmount(let request):
              return .requestData(request.toData())
         case .LoginStartAD:
             return .requestParameters(parameters: ["imgtype":"78", "shopid": "000001"], encoding: URLEncoding.default)
@@ -67,8 +79,10 @@ extension ApiManager: TargetType{
         switch self {
         case .AppUserLoginByPassword(request: _):
               return ["Content-Type": "application/json; charset=utf-8"]
-        case .ShopShopClassifyList(request: _), .LoginStartAD, .SysGetNoticeInfo(_):
-            return ["Authorization": "Bearer \(kUserDefaults.object(forKey: TokenKey) as! String)" , "Content-Type": "application/json; charset=utf-8"]
+            
+        default:
+              return ["Authorization": "Bearer \(kUserDefaults.object(forKey: TokenKey) as! String)" , "Content-Type": "application/json; charset=utf-8"]
+           
         
         
         }
