@@ -18,6 +18,7 @@ class RequestCodeHnadlePlugin: PluginType {
                 return
             }
             if code != 0{
+                print("\(target.method) \(target.baseURL)\((target.path))")
                 print("错误码: \(String(describing: code))  错误信息: \(String(describing: dic?["message"]))")
             }
 

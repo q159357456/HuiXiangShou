@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 class ProListTableViewCell: UITableViewCell {
-    var dataList: [Any]? {
+    var dataList: [ProductModel]? {
         didSet{
             self.colectionView.reloadData()
         }
@@ -28,10 +28,10 @@ class ProListTableViewCell: UITableViewCell {
             make.edges.equalTo(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         }
         colectionView.register(ProCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: NSStringFromClass(ProCollectionViewCell.classForCoder()))
-
+        colectionView.showsHorizontalScrollIndicator = false
         colectionView.delegate = self
         colectionView.dataSource = self
-        colectionView.backgroundColor = .green
+        colectionView.backgroundColor = .white
         layout.scrollDirection = .horizontal
 
     }
@@ -69,12 +69,13 @@ extension ProListTableViewCell{
 extension ProListTableViewCell: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return self.dataList?.count ?? 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ProCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(ProCollectionViewCell.classForCoder()), for: indexPath) as! ProCollectionViewCell
-        
+        let model: ProductModel = self.dataList![indexPath.item]
+        cell.proModel = model
         return cell
         
     }

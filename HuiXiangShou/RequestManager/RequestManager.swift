@@ -10,13 +10,16 @@ import Foundation
 import Moya
 import PromiseKit
 import ObjectMapper
-func requestAPI<T>(_ provider: MoyaProvider<T>, _ target: T) -> Promise<[String: Any]?> {
+func requestAPI<T>(_ provider: MoyaProvider<T>, _ target: T) -> Promise<[String: Any]> {
     return Promise(resolver: { (resolver) in
         provider.request(target, completion: { (result) in
             switch result{
             case let .success(response):
-                let dic: [String: Any]? = response.data.toDic()
-                resolver.fulfill(dic ?? nil)
+//                let dic: [String: Any]? = response.data.toDic()
+                guard let dic = response.data.toDic() else{
+                    return
+                }
+                resolver.fulfill(dic)
             case let .failure(eroor):
                 resolver.reject(eroor)
 
@@ -25,17 +28,17 @@ func requestAPI<T>(_ provider: MoyaProvider<T>, _ target: T) -> Promise<[String:
     })
 }
 
-func requestAPI<T,U: Mappable>(_ provider: MoyaProvider<T>, _ target: T) -> Promise<U?> {
+func requestObjAPI<T,U: Mappable>(_ provider: MoyaProvider<T>, _ model: U.Type , _ target: T) -> Promise<U> {
     return Promise(resolver: { (resolver) in
         provider.request(target, completion: { (result) in
             switch result{
             case let .success(reponse):
                 let dic: [String: Any]? = reponse.data.toDic()
-                guard let temp = dic?["data"] as? [String: Any], let temp1 = temp["data"] as? [String: Any] else{
+                guard let temp1 = dic?["data"] as? [String: Any] else{
                     return
                  
                 }
-                resolver.fulfill(Mapper<U>().map(JSON: temp1))
+                resolver.fulfill(Mapper<U>().map(JSON: temp1)!)
             case let .failure(erro):
                 resolver.reject(erro)
             }
@@ -43,13 +46,13 @@ func requestAPI<T,U: Mappable>(_ provider: MoyaProvider<T>, _ target: T) -> Prom
     })
 }
 
-func requestAPI<T,U: Mappable>(_ provider: MoyaProvider<T>, _ target: T) -> Promise<[U]?>{
+func requestObjListAPI<T,U: Mappable>(_ provider: MoyaProvider<T>, _ model: U.Type, _ target: T) -> Promise<[U]>{
     return Promise(resolver: { (resolver) in
         provider.request(target, completion: { (result) in
             switch result{
             case let .success(reponse):
                 let dic: [String: Any]? = reponse.data.toDic()
-                guard let temp = dic?["data"] as? [String: Any], let temp1 = temp["data"] as? [[String: Any]] else{
+                guard let temp1 = dic?["data"] as? [[String: Any]] else{
                     return
                 }
                 resolver.fulfill(Mapper<U>().mapArray(JSONArray: temp1))

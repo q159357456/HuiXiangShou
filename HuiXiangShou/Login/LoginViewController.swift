@@ -31,12 +31,12 @@ class LoginViewController: UIViewController {
                                                               RequestCodeHnadlePlugin()])
             _ = requestAPI(provider, .AppUserLoginByPassword(request: reqs)).done { (data) in
             
-                guard let temp = data?["data"] as? [String: Any], let token = temp["token"] as? String else{
+                guard let temp = data["data"] as? [String: Any], let token = temp["token"] as? String else{
                      return
                 }
                 kUserDefaults.set(token, forKey: TokenKey)
                 
-                guard let temp1 = data?["data"] as? [String: Any], let user = temp1["data"] as? [String: Any] else{
+                guard let temp1 = data["data"] as? [String: Any], let user = temp1["data"] as? [String: Any] else{
                      return
                 }
                

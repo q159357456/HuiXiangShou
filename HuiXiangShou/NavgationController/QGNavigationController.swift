@@ -11,6 +11,7 @@ import UIKit
 class QGNavigationController: UINavigationController {
     override func viewDidLoad() {
         self.navigationBar.barTintColor =  MainColor
+        self.navigationBar.isTranslucent = false
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

@@ -19,7 +19,7 @@ class LIButton: UIButton {
     public var btnType: LIButtonType = .topBottom
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.setTitleColor(.black, for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {
