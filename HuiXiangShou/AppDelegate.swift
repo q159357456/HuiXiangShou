@@ -13,7 +13,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var userModel: UserModel?
     var window: UIWindow?
-    let navigationController: QGTabbarController? = nil
+    var navigationController: QGNavigationController? = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -62,7 +62,8 @@ extension AppDelegate{
         
         if kUserDefaults.value(forKey: TokenKey) != nil {
             let tabbar = QGTabbarController()
-            self.window?.rootViewController = QGNavigationController(rootViewController: tabbar)
+            self.navigationController = QGNavigationController(rootViewController: tabbar)
+            self.window?.rootViewController = self.navigationController
         }else
         {
              self.window?.rootViewController = LoginViewController()

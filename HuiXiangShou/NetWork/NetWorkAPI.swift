@@ -10,12 +10,15 @@ import Foundation
 import Moya
 enum ApiManager {
     case AppUserLoginByPassword(request: String)
-    case LoginStartAD
+    case LoginStartAD(key: String)
     case ShopShopClassifyList(request: String)
     case SysGetNoticeInfo(request: String)
     case ProductGoodsList(request: String)
     case ProductGoodsListByCondition(request: String)
     case SysPlatformAmount(request: String)
+    case MemberMemberInfo(request: String)
+    case ProductGoodsListByClassify(request: String)
+    case ShopShopList(request: String)
 }
 
 
@@ -28,7 +31,7 @@ extension ApiManager: TargetType{
         switch self {
         case .AppUserLoginByPassword(_):
            return "/Login/AppUserLoginByPassword"
-        case .LoginStartAD:
+        case .LoginStartAD(_):
             return "/Login/StartAD"
         case .ShopShopClassifyList(_):
             return "/Shop/ShopClassifyList"
@@ -40,6 +43,12 @@ extension ApiManager: TargetType{
             return "/Product/GoodsListByCondition"
         case .SysPlatformAmount(_):
             return "/Sys/PlatformAmount"
+        case .MemberMemberInfo(_):
+            return "/Member/MemberInfo"
+        case .ProductGoodsListByClassify(_):
+            return "/Product/GoodsListByClassify"
+        case .ShopShopList(_):
+            return "/Shop/ShopList"
             
         }
         
@@ -50,7 +59,7 @@ extension ApiManager: TargetType{
     var method: Moya.Method {
         
         switch self {
-        case .LoginStartAD:
+        case .LoginStartAD(_):
             return .get
         default:
             return .post
@@ -67,10 +76,10 @@ extension ApiManager: TargetType{
 
     var task: Task {
         switch self {
-        case .AppUserLoginByPassword(let request),.ShopShopClassifyList(let request), .SysGetNoticeInfo(let request), .ProductGoodsList(let request), .ProductGoodsListByCondition(let request), .SysPlatformAmount(let request):
+        case .AppUserLoginByPassword(let request),.ShopShopClassifyList(let request), .SysGetNoticeInfo(let request), .ProductGoodsList(let request), .ProductGoodsListByCondition(let request), .SysPlatformAmount(let request),.MemberMemberInfo(let request),.ProductGoodsListByClassify(let request),.ShopShopList(let request):
              return .requestData(request.toData())
-        case .LoginStartAD:
-            return .requestParameters(parameters: ["imgtype":"78", "shopid": "000001"], encoding: URLEncoding.default)
+        case .LoginStartAD(let key):
+            return .requestParameters(parameters: ["imgtype":key, "shopid": "000001"], encoding: URLEncoding.default)
         }
         
     }

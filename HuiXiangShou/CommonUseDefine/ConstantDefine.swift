@@ -15,6 +15,7 @@ let LoginStatuKey: String = "LoginStatus"
 let TokenKey: String = "hxs_Token_key"
 let Hxs_Shopid: String = "hxs_shopid"
 let MainColor: UIColor  = HEX(hexValue: 0x6EBB51)
+let MainBgColor: UIColor = HEX(hexValue: 0xF8F8F8)
 let WX_Key: String = ""
 let WX_Scret: String = ""
 

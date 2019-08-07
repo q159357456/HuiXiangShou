@@ -118,6 +118,29 @@ class GoodsListModel: Mappable {
     
 }
 
+class ClassfyWithProModel: Mappable {
+    required init?(map: Map) {
+        
+    }
+    init() {
+        
+    }
+    func mapping(map: Map) {
+        ClassifyName <- map["ClassifyName"]
+        ClassifyNo <- map["ClassifyNo"]
+        ParentNo <- map["ParentNo"]
+        pictureurl <- map["pictureurl"]
+        goodslist <- map["goodslist"]
+    }
+    
+    var ClassifyName: String?
+    var ClassifyNo: String?
+    var ParentNo: String?
+    var pictureurl: String?
+    var goodslist: [ProductModel]?
+}
+
+
 class ProductModel: Mappable {
     required init?(map: Map) {
         
@@ -180,4 +203,47 @@ class PlatformAmountModel: Mappable {
     var cash3: Float?
     var cash4: Float?
     var ShopName: String?
+}
+
+class MemberModel:Mappable {
+    required init?(map: Map) {
+        
+    }
+    init() {
+        
+    }
+    func mapping(map: Map) {
+        MS001 <- map["MS001"]
+        MS002 <- map["MS002"]
+        MS006 <- map["MS006"]
+        MS007 <- map["MS007"]
+        MS008 <- map["MS008"]
+        MS030 <- map["MS030"]
+        OpenID <- map["OpenID"]
+        UDF06 <- map["UDF06"]
+        membergrade <- map["membergrade"]
+        parentid <- map["parentid"]
+        parentlogourl <- map["parentlogourl"]
+        parentname <- map["parentname"]
+        parenttype <- map["parenttype"]
+        popimgurl <- map["popimgurl"]
+        redscores <- map["redscores"]
+    }
+    
+    var MS001: String?
+    var MS002: String?
+    var MS006: String?
+    var MS007: String?
+    var MS008: String?
+    var MS030: String?
+    var OpenID: String?
+    var UDF06: String?
+    var membergrade: String?
+    var parentid: String?
+    var parentlogourl: String?
+    var parentname: String?
+    var parenttype: String?
+    var popimgurl: String?
+    var redscores: Int?
+    
 }

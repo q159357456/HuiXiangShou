@@ -52,7 +52,7 @@ class LIButton: UIButton {
             let imageY: CGFloat = (self.height - imageSize.height)/2
             imageView?.frame = CGRect(origin: CGPoint(x: imageX, y: imageY), size: imageSize)
             titleLabel?.frame = CGRect(x: (imageView?.maxX)! + offset, y: (self.height - labeSize.height)/2, width: labeSize.width, height: labeSize.height)
-            titleLabel?.backgroundColor = .red
+           
             
         }
        

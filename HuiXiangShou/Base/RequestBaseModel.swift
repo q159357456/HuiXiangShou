@@ -40,6 +40,15 @@ class DataList: Mappable {
         mobile <- map["mobile"]
         password <- map["password"]
         classifyno <- map["classifyno"]
+        cityno <- map["cityno"]
+        townno <- map["townno"]
+        circleno <- map["circleno"]
+        circlename <- map["circlename"]
+        orderby <- map["orderby"]
+        shopname <- map["shopname"]
+        lat <- map["lat"]
+        lng <- map["lng"]
+        distance <- map["distance"]
     }
     init() {
         
@@ -47,6 +56,16 @@ class DataList: Mappable {
     var mobile: String?
     var password: String?
     var classifyno: String?
+    var cityno: String?
+    var townno: String?
+    var circleno: String?
+    var circlename: String?
+    var orderby: String?
+    var shopname: String?
+    var lat: Double?
+    var lng: Double?
+    var distance: Float?
+    
 }
 
 class Basedata: Mappable {

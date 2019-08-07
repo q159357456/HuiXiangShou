@@ -149,6 +149,8 @@ func W_Scale(x:CGFloat) -> CGFloat {
 
 
 
+
+
 func H_Scale(y:CGFloat) -> CGFloat {
     
     return Scale_Height * y
@@ -197,6 +199,7 @@ public func Hfx_Sign(params: String?, time: String) -> String?{
         temp = "appid=\(Hxs_Appid)&timestamp=\(time)&token=\(token)&{}"
         
     }
+    print(temp)
     return temp!.md5().uppercased()
     
 }

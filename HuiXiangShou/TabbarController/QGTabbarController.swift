@@ -11,6 +11,7 @@ import UIKit
 class QGTabbarController: UITabBarController {
    
     override func viewDidLoad() {
+        self.tabBar.isTranslucent = false
         self.tabBar.backgroundColor = UIColor.white
         self.tabBar.isOpaque = false
         setUpTabBar(img: "", selImg: "", title: "首页", viewController: HomeViewController())

@@ -23,62 +23,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let provider1 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view) ,RequestCodeHnadlePlugin()])
-        let provider2 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view), RequestCodeHnadlePlugin()])
-        let provider3 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view),RequestCodeHnadlePlugin()])
-        let provider4 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view), RequestCodeHnadlePlugin()])
-        let provider5 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view), RequestCodeHnadlePlugin()])
-        let provider6 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view), RequestPrintResultPlugin(), RequestCodeHnadlePlugin()])
-
-        let base2: RequestBaseModel = RequestBaseModel()
-        base2.basedata.para1 = "000001"
-        base2.basedata.pageindex = 1
-        base2.basedata.pagesize = 5
-        base2.sign = Hfx_Sign(params: base2.basedata.toOrderJson(), time: base2.timestamp)
-        
-        let base3: RequestBaseModel = RequestBaseModel()
-        base3.sign = Hfx_Sign(params: nil, time: base3.timestamp)
-        print(base3.timestamp)
-        
-        
-        let base4: RequestBaseModel = RequestBaseModel()
-        base4.basedata.para1 = ""
-        base4.basedata.para2 = "1106"
-        base4.basedata.pageindex = 1
-        base4.basedata.pagesize = 5
-        base4.sign = Hfx_Sign(params: base4.basedata.toOrderJson(), time: base4.timestamp)
-        
-        let base5: RequestBaseModel = RequestBaseModel()
-        base5.basedata.pageindex = 1
-        base5.basedata.pagesize = 5
-        base5.dataList.classifyno = "11"
-        let signp: String = base5.basedata.toOrderJson()! + "&" + base5.dataList.toOrderJson()!
-        base5.sign = Hfx_Sign(params:signp, time: base5.timestamp)
-        
-        let base6: RequestBaseModel = RequestBaseModel()
-        base6.timestamp =  StringTimeStampPluse
-        base6.sign = Hfx_Sign(params: nil, time: base6.timestamp)
-        
-        let pro1 = requestObjListAPI(provider1, CyclePicModel.self, .LoginStartAD)
-        let pro2 = requestObjListAPI(provider2, NoticeModel.self, .SysGetNoticeInfo(request: base2.toJSONString()!))
-        let pro3 = requestObjListAPI(provider3, ClassifyModel.self, .ShopShopClassifyList(request: base3.toJSONString()!))
-        let pro4 = requestObjListAPI(provider4, GoodsListModel.self, .ProductGoodsList(request: base4.toJSONString()!))
-        let pro5 = requestObjListAPI(provider5, ProductModel.self, .ProductGoodsListByCondition(request: base5.toJSONString()!))
-        let pro6 = requestObjListAPI(provider6, PlatformAmountModel.self, .SysPlatformAmount(request: base6.toJSONString()!))
-        
-
-        _ = when(fulfilled: pro1,pro2,pro3,pro4,pro5).then{ data1,data2,data3,data4,data5 -> Promise<[PlatformAmountModel]> in
-            self.picArray = data1
-            self.noticeArray = data2
-            self.classifyArray = data3
-            self.goodsArray = data4
-            self.proArray = data5
-            return pro6
-            }.done({ (data6) in
-                self.plamountArray = data6
-                self.setUI()
-            })
-
+        netWorking()
         // Do any additional setup after loading the view.
     }
 }
@@ -278,6 +223,66 @@ extension HomeViewController{
         
     }
     
+}
+
+ // MARK: - network
+extension HomeViewController{
+    func netWorking() {
+        let provider1 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view) ,RequestCodeHnadlePlugin()])
+        let provider2 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view), RequestCodeHnadlePlugin()])
+        let provider3 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view),RequestCodeHnadlePlugin()])
+        let provider4 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view), RequestCodeHnadlePlugin()])
+        let provider5 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view), RequestCodeHnadlePlugin()])
+        let provider6 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view), RequestCodeHnadlePlugin()])
+        
+        let base2: RequestBaseModel = RequestBaseModel()
+        base2.basedata.para1 = "000001"
+        base2.basedata.pageindex = 1
+        base2.basedata.pagesize = 5
+        base2.sign = Hfx_Sign(params: base2.basedata.toOrderJson(), time: base2.timestamp)
+        
+        let base3: RequestBaseModel = RequestBaseModel()
+        base3.sign = Hfx_Sign(params: nil, time: base3.timestamp)
+     
+        
+        
+        let base4: RequestBaseModel = RequestBaseModel()
+        base4.basedata.para1 = ""
+        base4.basedata.para2 = "1106"
+        base4.basedata.pageindex = 1
+        base4.basedata.pagesize = 5
+        base4.sign = Hfx_Sign(params: base4.basedata.toOrderJson(), time: base4.timestamp)
+        
+        let base5: RequestBaseModel = RequestBaseModel()
+        base5.basedata.pageindex = 1
+        base5.basedata.pagesize = 5
+        base5.dataList.classifyno = "11"
+        let signp: String = base5.basedata.toOrderJson()! + "&" + base5.dataList.toOrderJson()!
+        base5.sign = Hfx_Sign(params:signp, time: base5.timestamp)
+        
+        let base6: RequestBaseModel = RequestBaseModel()
+        base6.timestamp =  StringTimeStampPluse
+        base6.sign = Hfx_Sign(params: nil, time: base6.timestamp)
+        
+        let pro1 = requestObjListAPI(provider1, CyclePicModel.self, .LoginStartAD(key: "78"))
+        let pro2 = requestObjListAPI(provider2, NoticeModel.self, .SysGetNoticeInfo(request: base2.toJSONString()!))
+        let pro3 = requestObjListAPI(provider3, ClassifyModel.self, .ShopShopClassifyList(request: base3.toJSONString()!))
+        let pro4 = requestObjListAPI(provider4, GoodsListModel.self, .ProductGoodsList(request: base4.toJSONString()!))
+        let pro5 = requestObjListAPI(provider5, ProductModel.self, .ProductGoodsListByCondition(request: base5.toJSONString()!))
+        let pro6 = requestObjListAPI(provider6, PlatformAmountModel.self, .SysPlatformAmount(request: base6.toJSONString()!))
+        
+        _ = when(fulfilled: pro1,pro2,pro3,pro4,pro5).then{ data1,data2,data3,data4,data5 -> Promise<[PlatformAmountModel]> in
+            self.picArray = data1
+            self.noticeArray = data2
+            self.classifyArray = data3
+            self.goodsArray = data4
+            self.proArray = data5
+            return pro6
+            }.done({ (data6) in
+                self.plamountArray = data6
+                self.setUI()
+            })
+    }
 }
 
  // MARK: - action

@@ -15,7 +15,6 @@ func requestAPI<T>(_ provider: MoyaProvider<T>, _ target: T) -> Promise<[String:
         provider.request(target, completion: { (result) in
             switch result{
             case let .success(response):
-//                let dic: [String: Any]? = response.data.toDic()
                 guard let dic = response.data.toDic() else{
                     return
                 }
@@ -36,7 +35,6 @@ func requestObjAPI<T,U: Mappable>(_ provider: MoyaProvider<T>, _ model: U.Type ,
                 let dic: [String: Any]? = reponse.data.toDic()
                 guard let temp1 = dic?["data"] as? [String: Any] else{
                     return
-                 
                 }
                 resolver.fulfill(Mapper<U>().map(JSON: temp1)!)
             case let .failure(erro):
