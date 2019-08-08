@@ -48,7 +48,7 @@ class DataList: Mappable {
         shopname <- map["shopname"]
         lat <- map["lat"]
         lng <- map["lng"]
-        distance <- map["distance"]
+        distance <- map["classifyno"]
     }
     init() {
         
@@ -62,8 +62,8 @@ class DataList: Mappable {
     var circlename: String?
     var orderby: String?
     var shopname: String?
-    var lat: Double?
-    var lng: Double?
+    var lat: String?
+    var lng: String?
     var distance: Float?
     
 }

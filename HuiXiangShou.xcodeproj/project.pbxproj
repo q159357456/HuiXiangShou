@@ -43,6 +43,7 @@
 		7F6DA01E22FAA012003D5386 /* SearchTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA01D22FAA012003D5386 /* SearchTapView.swift */; };
 		7F6DA02022FAC042003D5386 /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA01F22FAC042003D5386 /* ShopCollectionViewCell.swift */; };
 		7F6DA02422FAC5A5003D5386 /* UICollectionViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02322FAC5A5003D5386 /* UICollectionViewExtention.swift */; };
+		7F6DA02622FC0D09003D5386 /* FilterHandelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02522FC0D09003D5386 /* FilterHandelView.swift */; };
 		7FEFEDF322EE8D7D006FFC2A /* ProListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF222EE8D7D006FFC2A /* ProListTableViewCell.swift */; };
 		7FEFEDF522EE8DC6006FFC2A /* ProCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */; };
 		7FEFEDF722EEBF03006FFC2A /* ThemeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF622EEBF03006FFC2A /* ThemeTitleView.swift */; };
@@ -92,6 +93,7 @@
 		7F6DA01D22FAA012003D5386 /* SearchTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTapView.swift; sourceTree = "<group>"; };
 		7F6DA01F22FAC042003D5386 /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F6DA02322FAC5A5003D5386 /* UICollectionViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtention.swift; sourceTree = "<group>"; };
+		7F6DA02522FC0D09003D5386 /* FilterHandelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHandelView.swift; sourceTree = "<group>"; };
 		7FEFEDF222EE8D7D006FFC2A /* ProListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProListTableViewCell.swift; sourceTree = "<group>"; };
 		7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCollectionViewCell.swift; sourceTree = "<group>"; };
 		7FEFEDF622EEBF03006FFC2A /* ThemeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTitleView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				7F6DA01922F818A3003D5386 /* MapableExtention.swift */,
 				7C12BFD922ED95D600AFD0A3 /* LIButton.swift */,
 				7FEFEDF822EED2CF006FFC2A /* CyclePlayView.swift */,
+				7F6DA02522FC0D09003D5386 /* FilterHandelView.swift */,
 				7F6DA02322FAC5A5003D5386 /* UICollectionViewExtention.swift */,
 			);
 			path = CommonUseDefine;
@@ -397,6 +400,7 @@
 				7F6DA02022FAC042003D5386 /* ShopCollectionViewCell.swift in Sources */,
 				7C12BFF422F57B5A00AFD0A3 /* RequestPrintResultPlugins.swift in Sources */,
 				7F16776622EE7E8300245E9D /* QGTabbarController.swift in Sources */,
+				7F6DA02622FC0D09003D5386 /* FilterHandelView.swift in Sources */,
 				7F6DA01622F80326003D5386 /* DictionnaryExtention.swift in Sources */,
 				7FEFEDF522EE8DC6006FFC2A /* ProCollectionViewCell.swift in Sources */,
 				7FEFEDF922EED2CF006FFC2A /* CyclePlayView.swift in Sources */,

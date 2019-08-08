@@ -48,7 +48,7 @@ extension ApiManager: TargetType{
         case .ProductGoodsListByClassify(_):
             return "/Product/GoodsListByClassify"
         case .ShopShopList(_):
-            return "/Shop/ShopList"
+            return "/Shop/ShopList_IOS"
             
         }
         

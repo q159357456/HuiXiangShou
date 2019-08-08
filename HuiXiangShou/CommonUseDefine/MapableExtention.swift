@@ -15,7 +15,7 @@ extension Mappable{
         var temp = [String]()
         
         for (key, value) in keyValues{
-            if value.self is Int || value.self is Double {
+            if value.self is Int || value.self is Double || value.self is Float {
                  temp.append("\"\(key)\":\(value)")
             }else
             {

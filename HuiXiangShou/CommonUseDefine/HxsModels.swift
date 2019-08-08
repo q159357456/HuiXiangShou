@@ -247,3 +247,71 @@ class MemberModel:Mappable {
     var redscores: Int?
     
 }
+
+class ShopModel: Mappable {
+    required init?(map: Map) {
+        
+    }
+    init() {
+        
+    }
+    func mapping(map: Map) {
+        Cheapgoods <- map["Cheapgoods"]
+        ClassifyName <- map["ClassifyName"]
+        IsCoupon <- map["IsCoupon"]
+        IsFullcut <- map["IsFullcut"]
+        IsPreOrder <- map["IsPreOrder"]
+        Latitude <- map["Latitude"]
+        Longitude <- map["Longitude"]
+        POS_RunModel <- map["POS_RunModel"]
+        ShopCategory <- map["ShopCategory"]
+        address <- map["address"]
+        allstar <- map["allstar"]
+        boroName <- map["boroName"]
+        cityName <- map["cityName"]
+        company <- map["company"]
+        contact <- map["contact"]
+        distance <- map["distance"]
+        fax <- map["fax"]
+        goodstar <- map["goodstar"]
+        logourl <- map["logourl"]
+        phone <- map["phone"]
+        provName <- map["provName"]
+        salesqty <- map["salesqty"]
+        shopdiscount <- map["shopdiscount"]
+        shopid <- map["shopid"]
+        shoplabel <- map["shoplabel"]
+        shopname <- map["shopname"]
+        upnum <- map["upnum"]
+     
+    }
+    
+    var Cheapgoods: String?
+    var ClassifyName: String?
+    var IsCoupon: Bool?
+    var IsFullcut: Bool?
+    var IsPreOrder: Bool?
+    var Latitude: String?
+    var Longitude: String?
+    var POS_RunModel: String?
+    var ShopCategory: String?
+    var address: String?
+    var allstar: String?
+    var boroName: String?
+    var cityName: String?
+    var company: String?
+    var contact: String?
+    var distance: String?
+    var fax: String?
+    var goodstar: String?
+    var logourl: String?
+    var phone: String?
+    var provName: String?
+    var salesqty: Int?
+    var shopdiscount: String?
+    var shopid: String?
+    var shoplabel: String?
+    var shopname: String?
+    var upnum: Int?
+
+}

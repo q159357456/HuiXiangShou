@@ -90,15 +90,15 @@ extension StoreViewController: UITableViewDataSource,UITableViewDelegate{
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    
         return 1
         
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let classModel: ClassfyWithProModel = self.dataArray[indexPath.section]
-        let cell:ProListTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(ProListTableViewCell.classForCoder()))! as! ProListTableViewCell
+        let cell:ProListTableViewCell = tableView.getRecycleCell(ProListTableViewCell.self)
         cell.dataList = classModel.goodslist
         return cell
 
@@ -151,8 +151,7 @@ extension StoreViewController{
         
         let  base: RequestBaseModel = RequestBaseModel()
         base.sign = Hfx_Sign(params: nil, time: base.timestamp)
-        let provider = MoyaProvider<ApiManager>(plugins: [RequestPrintResultPlugin()])
-        
+        let provider = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin()])
         _ = requestObjListAPI(provider, ClassfyWithProModel.self, .ProductGoodsListByClassify(request: base.toJSONString()!)).done({ (data) in
             self.dataArray = data
             self.tableView.reloadData()

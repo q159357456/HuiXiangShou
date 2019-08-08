@@ -199,7 +199,6 @@ public func Hfx_Sign(params: String?, time: String) -> String?{
         temp = "appid=\(Hxs_Appid)&timestamp=\(time)&token=\(token)&{}"
         
     }
-    print(temp)
     return temp!.md5().uppercased()
     
 }

@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
             requset.dataList.password = "123456"
             let reqs: String = requset.toJSONString()!
             let provider = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view),
-                                                              RequestCodeHnadlePlugin()])
+                                                              RequestCodeHnadlePlugin(),RequestPrintResultPlugin()])
             _ = requestAPI(provider, .AppUserLoginByPassword(request: reqs)).done { (data) in
             
                 guard let temp = data["data"] as? [String: Any], let token = temp["token"] as? String else{

@@ -12,6 +12,7 @@ import PromiseKit
 class ShopViewController: BaseViewController {
     var collectionView: UICollectionView?
     
+    var dataArray = [ShopModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,29 +20,22 @@ class ShopViewController: BaseViewController {
         let base: RequestBaseModel = RequestBaseModel()
         base.basedata.pageindex = 1
         base.basedata.pagesize = 10
-        base.dataList.lat = 39.922705
-        base.dataList.lng = 116.416637
+        
+        base.dataList.lat = "39.922705"
+        base.dataList.lng = "116.416637"
         base.dataList.cityno = ""
         let sign: String = "\(base.basedata.toOrderJson()!)&\(base.dataList.toOrderJson()!)"
-        
         base.sign = Hfx_Sign(params: sign, time: base.timestamp)
-  
-        let provider = MoyaProvider<ApiManager>(plugins: [RequestCodeHnadlePlugin(), RequestPrintResultPlugin(), RequestHitPlugin(view: self.view)])
+
+        let provider = MoyaProvider<ApiManager>(plugins: [RequestCodeHnadlePlugin(), RequestHitPlugin(view: self.view)])
         
-        _ = requestAPI(provider, .ShopShopList(request: base.toJSONString()!))
+        _ = requestObjListAPI(provider, ShopModel.self, .ShopShopList(request: base.toJSONString()!)).done({ (data) in
+            self.dataArray.append(contentsOf: data)
+            self.collectionView?.reloadData()
+        })
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -68,29 +62,31 @@ extension ShopViewController{
         layout.itemSize = CGSize(width: SCREEN_WIDTH - 20, height: 100)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
-        let collection: UICollectionView = UICollectionView(frame: CGRect(x: 0, y: secondView.maxY, width: SCREEN_WIDTH, height: self.view.height - secondView.maxY), collectionViewLayout: layout)
+        let collection: UICollectionView = UICollectionView(frame: CGRect(x: 0, y: secondView.maxY, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - secondView.maxY - kNavigationBarHeight - kTabBarHeight), collectionViewLayout: layout)
         self.view.addSubview(collection)
         self.collectionView = collection
         self.collectionView?.regist(ShopCollectionViewCell.self)
-        self.collectionView?.delegate = self as? UICollectionViewDelegate
-        self.collectionView?.dataSource = self as? UICollectionViewDataSource
-        
+        self.collectionView?.delegate = self
+        self.collectionView?.dataSource = self 
+        self.collectionView?.backgroundColor = MainBgColor
     }
     
     
     
 }
 
-extension ShopCollectionViewCell: UICollectionViewDelegate , UICollectionViewDataSource{
+extension ShopViewController: UICollectionViewDelegate , UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return 10
+         return self.dataArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: ShopCollectionViewCell = collectionView.getRecycleCell(indexPath, ShopCollectionViewCell.self)
-        
+        let model: ShopModel = self.dataArray[indexPath.item]
+        cell.backgroundColor = .white
+        cell.model = model
         return cell
         
     }
