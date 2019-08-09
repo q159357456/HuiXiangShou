@@ -85,7 +85,7 @@ extension HomeViewController{
         let v3_imagev: UIImageView = UIImageView(frame: CGRect(x: 15, y: W_Scale(x: 10), width: W_Scale(x: 60), height: W_Scale(x: 60)))
         let line: UIView = UIView(frame: CGRect(x: v3_imagev.maxX+10, y: W_Scale(x: 20), width: 1, height: W_Scale(x: 40)))
         line.backgroundColor = .lightGray
-        v3_imagev.backgroundColor = .red
+        v3_imagev.image = kGetImage(name: "notice")
         var nolsit = [String]()
         if self.noticeArray != nil {
             for nom in self.noticeArray!{
@@ -142,7 +142,7 @@ extension HomeViewController{
          
         }
         
-        let imagearr1: [String] = ["placeHolder","placeHolder","placeHolder","placeHolder"]
+        let imagearr1: [String] = ["bonus_1","bonus_2","bonus_3","bonus_4"]
         let titlearr1: [String] = ["新进池","待分配","已发池","公益金"]
         let plmodel: PlatformAmountModel? = self.plamountArray?.first
         
@@ -155,13 +155,15 @@ extension HomeViewController{
             button.frame = CGRect(x: x, y: 0, width: w, height: W_Scale(x: 120))
             button.setTitle(titlearr1[inx], for: .normal)
             button .setImage(kGetImage(name: imagearr1[inx]), for: .normal)
-            button.labelImgOffset = W_Scale(x: 30)
+            button.imgSize = CGSize(width: W_Scale(x: 70), height: W_Scale(x: 70))
+            button.labelImgOffset = W_Scale(x: 20)
             button.titleLabel?.font = kSystemFont(font: W_Scale(x: 13))
             let label: UILabel = UILabel()
             label.frame = CGRect(x: x, y: button.maxY, width: w, height: 15)
             label.textAlignment = .center
             label.font = kSystemFont(font: W_Scale(x: 13))
             label.text = "￥\(contlist[inx])"
+            label.textColor = .lightGray
             forthView.addSubview(button)
             forthView.addSubview(label)
             
@@ -180,9 +182,10 @@ extension HomeViewController{
                 let goodmodel: GoodsListModel = self.goodsArray![inx]
                 hot.label1.text = goodmodel.ProductName
                 hot.label2.text = "\(goodmodel.RetailPrice ?? "0.00")元"
-                
+                hot.label1.textColor = .red
+                hot.label2.textColor = .red
                 fiveView.addSubview(hot)
-                hot.backgroundColor = .red
+//                hot.backgroundColor = .red
             }
         }
        

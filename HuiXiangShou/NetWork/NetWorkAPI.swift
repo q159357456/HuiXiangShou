@@ -19,6 +19,11 @@ enum ApiManager {
     case MemberMemberInfo(request: String)
     case ProductGoodsListByClassify(request: String)
     case ShopShopList(request: String)
+    case SysGetTownInfo(cityCode: String)
+    case SysGetProviceInfo
+    case SysGetCityInfo(provCode: String, cityName: String)
+    case SysGetVillageInfo(townCode: String)
+    case SysGetCircleInfo(cityCode: String, townCode: String, circlename: String)
 }
 
 
@@ -49,7 +54,17 @@ extension ApiManager: TargetType{
             return "/Product/GoodsListByClassify"
         case .ShopShopList(_):
             return "/Shop/ShopList_IOS"
-            
+        case .SysGetTownInfo(_):
+            return "/Sys/GetTownInfo"
+        case .SysGetProviceInfo:
+            return "Sys/GetProviceInfo"
+        case .SysGetCityInfo(_):
+            return "/Sys/GetCityInfo"
+        case .SysGetVillageInfo(_):
+            return "/Sys/GetVillageInfo"
+        case .SysGetCircleInfo(_):
+            return "/Sys/GetCircleInfo"
+        
         }
         
         
@@ -59,7 +74,7 @@ extension ApiManager: TargetType{
     var method: Moya.Method {
         
         switch self {
-        case .LoginStartAD(_):
+        case .LoginStartAD(_), .SysGetTownInfo(_),.SysGetProviceInfo,.SysGetCityInfo(_), .SysGetVillageInfo(_), .SysGetCircleInfo(_):
             return .get
         default:
             return .post
@@ -80,7 +95,21 @@ extension ApiManager: TargetType{
              return .requestData(request.toData())
         case .LoginStartAD(let key):
             return .requestParameters(parameters: ["imgtype":key, "shopid": "000001"], encoding: URLEncoding.default)
+            
+        case .SysGetTownInfo(let cityCode):
+            return .requestParameters(parameters: ["cityCode":cityCode], encoding: URLEncoding.default)
+            
+        case .SysGetCityInfo(let provCode, let cityName):
+            return .requestParameters(parameters: ["provCode":provCode, "cityName": cityName], encoding: URLEncoding.default)
+        case .SysGetVillageInfo(let townCode):
+            return .requestParameters(parameters: ["townCode":townCode], encoding: URLEncoding.default)
+        case .SysGetCircleInfo(let cityCode, let townCode, let circlename):
+            return .requestParameters(parameters: ["cityCode":cityCode, "townCode": townCode, "circlename":circlename], encoding: URLEncoding.default)
+        default:
+            return .requestPlain
         }
+        
+    
         
     }
     

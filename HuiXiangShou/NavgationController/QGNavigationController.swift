@@ -12,6 +12,10 @@ class QGNavigationController: UINavigationController {
     override func viewDidLoad() {
         self.navigationBar.barTintColor =  MainColor
         self.navigationBar.isTranslucent = false
+
+        let backItem :UIBarButtonItem = UIBarButtonItem(title: "返回", style: .plain, target: nil, action: nil)
+        //设置backBarButtonItem即可
+        self.navigationItem.backBarButtonItem = backItem
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

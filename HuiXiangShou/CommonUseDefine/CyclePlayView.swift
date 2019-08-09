@@ -281,7 +281,6 @@ extension CyclePlayView{
             item = 0
         }
         
-//      print(datas)
         self.collectionView.scrollToItem(at: IndexPath(item: item, section: 0), at: self.scrollPosition, animated: true)
     }
     
@@ -317,9 +316,9 @@ extension CyclePlayView: UICollectionViewDelegate, UICollectionViewDataSource {
             
         case .txtModel:
             let cell = collectionView .dequeueReusableCell(withReuseIdentifier: NSStringFromClass(CycleLabelCell.classForCoder()), for: indexPath) as! CycleLabelCell
-            
             cell.label?.text = self.datas?[indexPath.item]
             cell.label?.numberOfLines = 0
+            cell.label?.font = kSystemFont(font: 15)
             return cell
             
      

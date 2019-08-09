@@ -18,7 +18,5 @@ let MainColor: UIColor  = HEX(hexValue: 0x6EBB51)
 let MainBgColor: UIColor = HEX(hexValue: 0xF8F8F8)
 let WX_Key: String = ""
 let WX_Scret: String = ""
-
-
 let Hxs_PlaceHloder: UIImage = UIImage(named: "placeHolder")!
 

@@ -27,3 +27,38 @@ func getPicCycleData(key: String) -> Promise<[CyclePicModel]>{
     let req: Promise<[CyclePicModel]> = requestObjListAPI(provider1, CyclePicModel.self, .LoginStartAD(key: key))
     return req
 }
+
+//省
+func getProvinceInfo() -> Promise<[ProvinceInfo]>{
+    
+    let provider1 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: kAppDelegate.window!)])
+    let req: Promise<[ProvinceInfo]> = requestObjListAPI(provider1, ProvinceInfo.self, .SysGetProviceInfo)
+    return req
+
+}
+
+//市
+
+func getCityCode(_ provCode: String, _ cityName: String) -> Promise<[CityInfo]>{
+    let provider1 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: kAppDelegate.window!),RequestPrintResultPlugin()])
+    let req:Promise<[CityInfo]> = requestObjListAPI(provider1, CityInfo.self, .SysGetCityInfo(provCode: provCode, cityName: cityName))
+    return req
+
+}
+
+//镇区资料//360800
+func getTownInfo(_ cityCode: String) -> Promise<[TownInfo]>{
+    let provider1 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: kAppDelegate.window!)])
+    let req: Promise<[TownInfo]> = requestObjListAPI(provider1, TownInfo.self, .SysGetTownInfo(cityCode: cityCode))
+    return req
+}
+
+//大类
+func getClassify() -> Promise<[ClassifyModel]>{
+    let provider1 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: kAppDelegate.window!)])
+    let base1: RequestBaseModel = RequestBaseModel()
+    base1.sign = Hfx_Sign(params: nil, time: base1.timestamp)
+    let req: Promise<[ClassifyModel]> = requestObjListAPI(provider1, ClassifyModel.self, .ShopShopClassifyList(request: base1.toJSONString()!))
+    return req
+    
+}

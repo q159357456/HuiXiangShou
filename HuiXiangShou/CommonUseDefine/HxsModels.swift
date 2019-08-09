@@ -315,3 +315,56 @@ class ShopModel: Mappable {
     var upnum: Int?
 
 }
+
+class TownInfo: Mappable {
+    required init?(map: Map) {
+        
+    }
+    init() {
+        
+    }
+    func mapping(map: Map){
+        boroCode <- map["boroCode"]
+        boroName <- map["boroName"]
+        boroagentcode <- map["boroagentcode"]
+        cityCode <- map["cityCode"]
+    }
+    
+    var boroCode: String?
+    var boroName: String?
+    var boroagentcode: String?
+    var cityCode: String?
+}
+
+class ProvinceInfo: Mappable {
+    required init?(map: Map) {
+        
+    }
+    init() {
+        
+    }
+    func mapping(map: Map){
+        provCode <- map["provCode"]
+        provName <- map["provName"]
+    }
+    var provCode: String?
+    var provName: String?
+}
+
+class CityInfo: Mappable {
+    required init?(map: Map) {
+        
+    }
+    init() {
+        
+    }
+    func mapping(map: Map){
+        cityCode <- map["cityCode"]
+        cityName <- map["cityName"]
+        provCode <- map["provCode"]
+    }
+    
+    var cityCode: String?
+    var cityName: String?
+    var provCode: String?
+}
