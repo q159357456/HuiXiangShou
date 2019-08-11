@@ -151,7 +151,7 @@ extension StoreViewController{
         
         let  base: RequestBaseModel = RequestBaseModel()
         base.sign = Hfx_Sign(params: nil, time: base.timestamp)
-        let provider = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin()])
+        let provider = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view)])
         _ = requestObjListAPI(provider, ClassfyWithProModel.self, .ProductGoodsListByClassify(request: base.toJSONString()!)).done({ (data) in
             self.dataArray = data
             self.tableView.reloadData()
