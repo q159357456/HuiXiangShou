@@ -15,6 +15,7 @@ class MineViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = MainBgColor
         setUI()
         netWork()
 //        self.view.backgroundColor = UIColor.red
@@ -47,16 +48,18 @@ extension MineViewController{
         scroview.addSubview(top)
         self.topView = top
         
-        let imageV: UIImageView = UIImageView(frame: CGRect(x: 10, y: top.maxY + 10, width: SCREEN_WIDTH - 20, height: 60))
-        imageV.backgroundColor = randomColor()
+        let imageV: UIImageView = UIImageView(frame: CGRect(x: 10, y: top.maxY + 10, width: SCREEN_WIDTH - 20, height: 55))
+        imageV.image = kGetImage(name: "mine_long")
+//        imageV.backgroundColor = .white
         scroview.addSubview(imageV)
         
-        let view: UIView = UIView(frame: CGRect(x: 10, y: imageV.maxY + 10, width: SCREEN_WIDTH - 20, height: SCREEN_WIDTH - 60))
-        view.backgroundColor = randomColor()
+        let view: UIView = UIView(frame: CGRect(x: 10, y: imageV.maxY + 10, width: SCREEN_WIDTH - 20, height: SCREEN_WIDTH - 100))
+        view.backgroundColor = .white
         scroview.addSubview(view)
         
         let w: CGFloat = view.width/3
         let h: CGFloat = view.height/3
+        let titles: [String] = ["我的订单","我的资产","我的团队","我的工具","我的代理","我的股份","领福利","注册上商家"]
         
         for inx in 0..<8{
             let x: CGFloat = CGFloat(inx%3) * w
@@ -64,8 +67,9 @@ extension MineViewController{
             
             let butn: LIButton = LIButton(frame: CGRect(x: x, y: y, width: w, height: h))
             butn.btnType = .topBottom
-            butn.setImage(Hxs_PlaceHloder, for: .normal)
-            butn.setTitle("66666", for: .normal)
+            butn.imgSize = CGSize(width: 40, height: 40)
+            butn.setImage(kGetImage(name: String(format: "mine_%d", inx + 1)), for: .normal)
+            butn.setTitle(titles[inx], for: .normal)
             butn.titleLabel?.font = hxs_lightFont
             view.addSubview(butn)
             

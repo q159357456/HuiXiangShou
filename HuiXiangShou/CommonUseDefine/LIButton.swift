@@ -36,7 +36,7 @@ class LIButton: UIButton {
             
             let labeSize: CGSize = CGSize(width: self.width, height: 14)
             let offset :CGFloat = labelImgOffset != nil ? labelImgOffset! : 10.0
-            let imageX: CGFloat =  self.width/4
+            let imageX: CGFloat =  (self.width - imageSize.width)/2.0
             let imageY: CGFloat = (self.height - imageSize.height - labeSize.height - offset)/2
             
             imageView?.frame = CGRect(origin: CGPoint(x: imageX, y: imageY), size: imageSize)
@@ -54,6 +54,16 @@ class LIButton: UIButton {
             titleLabel?.frame = CGRect(x: (imageView?.maxX)! + offset, y: (self.height - labeSize.height)/2, width: labeSize.width, height: labeSize.height)
            
             
+        }else if self.btnType == .rightLeft {
+            
+            let imageSize: CGSize = imgSize != nil ? imgSize! : CGSize(width: 40.0, height: 40.0)
+            let size: CGSize = self.titleLabel?.sizeThatFits(CGSize.zero) ?? CGSize.zero
+            let labeSize: CGSize = CGSize(width: size.width, height: 14)
+            let offset :CGFloat = labelImgOffset != nil ? labelImgOffset! : 10.0
+            let labelX: CGFloat = (self.width - imageSize.width - labeSize.width - offset)/2
+            titleLabel?.frame = CGRect(x: labelX, y: (self.height - labeSize.height)/2, width: labeSize.width, height: labeSize.height)
+            imageView?.frame = CGRect(origin: CGPoint(x: (titleLabel?.maxX)! + offset, y: (self.height - imageSize.height)/2), size: imageSize)
+           
         }
        
 

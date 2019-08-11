@@ -48,7 +48,16 @@ extension ShopViewController{
         secondView.backgroundColor = MainBgColor
         self.view.addSubview(topview)
         self.view.addSubview(secondView)
-        let search: SearchTapView = SearchTapView.init(CGRect(x: 50, y: 10, width: topview.width - 100, height: 30)) {
+        
+        let btn: UIButton = UIButton(type: .custom)
+        
+        btn.frame = CGRect(x: 10, y: 10, width: 60, height: 30)
+        btn.backgroundColor = randomColor()
+        btn.addTarget(self, action: #selector(chooseCity), for: .touchUpInside)
+        topview.addSubview(btn)
+        let search: SearchTapView = SearchTapView.init(CGRect(x: 80, y: 10, width: topview.width - 130, height: 30)) {
+            let vc: ShopSearchViewController = ShopSearchViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }
         search.txt = "搜索商品"
@@ -88,6 +97,16 @@ extension ShopViewController: UICollectionViewDelegate , UICollectionViewDataSou
         cell.backgroundColor = .white
         cell.model = model
         return cell
+        
+    }
+}
+
+//MARK: -action
+extension ShopViewController{
+    
+    @objc func chooseCity()  {
+        let vc = CityChooseController()
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
 }

@@ -44,6 +44,10 @@
 		7F6DA02022FAC042003D5386 /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA01F22FAC042003D5386 /* ShopCollectionViewCell.swift */; };
 		7F6DA02422FAC5A5003D5386 /* UICollectionViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02322FAC5A5003D5386 /* UICollectionViewExtention.swift */; };
 		7F6DA02622FC0D09003D5386 /* FilterHandelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02522FC0D09003D5386 /* FilterHandelView.swift */; };
+		7F6DA02922FD0CB0003D5386 /* ShopSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02822FD0CB0003D5386 /* ShopSearchViewController.swift */; };
+		7F6DA02B22FD0CC5003D5386 /* ProSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02A22FD0CC5003D5386 /* ProSearchViewController.swift */; };
+		7F6DA02E22FD103C003D5386 /* QGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02D22FD103C003D5386 /* QGNavigationController.swift */; };
+		7F6DA03122FD5116003D5386 /* CityChooseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA03022FD5116003D5386 /* CityChooseController.swift */; };
 		7FEFEDF322EE8D7D006FFC2A /* ProListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF222EE8D7D006FFC2A /* ProListTableViewCell.swift */; };
 		7FEFEDF522EE8DC6006FFC2A /* ProCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */; };
 		7FEFEDF722EEBF03006FFC2A /* ThemeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF622EEBF03006FFC2A /* ThemeTitleView.swift */; };
@@ -94,6 +98,10 @@
 		7F6DA01F22FAC042003D5386 /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F6DA02322FAC5A5003D5386 /* UICollectionViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtention.swift; sourceTree = "<group>"; };
 		7F6DA02522FC0D09003D5386 /* FilterHandelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHandelView.swift; sourceTree = "<group>"; };
+		7F6DA02822FD0CB0003D5386 /* ShopSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSearchViewController.swift; sourceTree = "<group>"; };
+		7F6DA02A22FD0CC5003D5386 /* ProSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSearchViewController.swift; sourceTree = "<group>"; };
+		7F6DA02D22FD103C003D5386 /* QGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QGNavigationController.swift; sourceTree = "<group>"; };
+		7F6DA03022FD5116003D5386 /* CityChooseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityChooseController.swift; sourceTree = "<group>"; };
 		7FEFEDF222EE8D7D006FFC2A /* ProListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProListTableViewCell.swift; sourceTree = "<group>"; };
 		7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCollectionViewCell.swift; sourceTree = "<group>"; };
 		7FEFEDF622EEBF03006FFC2A /* ThemeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTitleView.swift; sourceTree = "<group>"; };
@@ -223,11 +231,14 @@
 				7F16773C22E693E500245E9D /* ViewController.swift */,
 				7F16773E22E693E500245E9D /* Main.storyboard */,
 				7C12BFEB22F540E500AFD0A3 /* HuiXiangShou-Bridging-Header.h */,
+				7F6DA02F22FD484C003D5386 /* Location */,
+				7F6DA02722FD0C84003D5386 /* Search */,
 				7F6DA01222F42F94003D5386 /* RequestManager */,
 				7FEFEDFA22F01EA7006FFC2A /* NetWork */,
 				7C12BFC622ECA21D00AFD0A3 /* HomePageControllers */,
 				7C12BFD622ED41EC00AFD0A3 /* Login */,
 				7C12BFD322ED3AD100AFD0A3 /* Base */,
+				7F6DA02C22FD103C003D5386 /* NavgationController */,
 				7F16776422EE7E4700245E9D /* TabbarController */,
 				7C0677FB22E8AC3A002C9D27 /* CommonUseDefine */,
 				7F16774122E693E700245E9D /* Assets.xcassets */,
@@ -253,6 +264,32 @@
 				7C12BFF122F56E2100AFD0A3 /* RequestCodeHnadlePlugin.swift */,
 			);
 			path = RequestManager;
+			sourceTree = "<group>";
+		};
+		7F6DA02722FD0C84003D5386 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7F6DA02822FD0CB0003D5386 /* ShopSearchViewController.swift */,
+				7F6DA02A22FD0CC5003D5386 /* ProSearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		7F6DA02C22FD103C003D5386 /* NavgationController */ = {
+			isa = PBXGroup;
+			children = (
+				7F6DA02D22FD103C003D5386 /* QGNavigationController.swift */,
+			);
+			name = NavgationController;
+			path = HuiXiangShou/NavgationController;
+			sourceTree = SOURCE_ROOT;
+		};
+		7F6DA02F22FD484C003D5386 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				7F6DA03022FD5116003D5386 /* CityChooseController.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		7FEFEDFA22F01EA7006FFC2A /* NetWork */ = {
@@ -381,6 +418,7 @@
 				7C12BFDE22EDBAA700AFD0A3 /* HotComboView.swift in Sources */,
 				7F6DA00322F29564003D5386 /* DateExtension.swift in Sources */,
 				7C12BFE022F12E6400AFD0A3 /* UserModel.swift in Sources */,
+				7F6DA03122FD5116003D5386 /* CityChooseController.swift in Sources */,
 				7C12BFCC22ECA2BF00AFD0A3 /* StoreViewController.swift in Sources */,
 				7C12BFE622F48BD500AFD0A3 /* DataExtention.swift in Sources */,
 				7F6DA01C22FA60D7003D5386 /* CommonUseNetWork.swift in Sources */,
@@ -393,12 +431,15 @@
 				7C12BFD522ED3ADF00AFD0A3 /* BaseViewController.swift in Sources */,
 				7C12BFF222F56E2100AFD0A3 /* RequestCodeHnadlePlugin.swift in Sources */,
 				7C12BFE422F32FB100AFD0A3 /* StringExtention.swift in Sources */,
+				7F6DA02922FD0CB0003D5386 /* ShopSearchViewController.swift in Sources */,
 				7FEFEDFC22F01EA7006FFC2A /* NetWorkAPI.swift in Sources */,
 				7C0677FD22E8AC58002C9D27 /* CommonUseDefine.swift in Sources */,
 				7F6DA00122F294EA003D5386 /* UIviewExtension.swift in Sources */,
 				7F6DA01422F42FBD003D5386 /* RequestManager.swift in Sources */,
 				7F6DA02022FAC042003D5386 /* ShopCollectionViewCell.swift in Sources */,
 				7C12BFF422F57B5A00AFD0A3 /* RequestPrintResultPlugins.swift in Sources */,
+				7F6DA02B22FD0CC5003D5386 /* ProSearchViewController.swift in Sources */,
+				7F6DA02E22FD103C003D5386 /* QGNavigationController.swift in Sources */,
 				7F16776622EE7E8300245E9D /* QGTabbarController.swift in Sources */,
 				7F6DA02622FC0D09003D5386 /* FilterHandelView.swift in Sources */,
 				7F6DA01622F80326003D5386 /* DictionnaryExtention.swift in Sources */,
