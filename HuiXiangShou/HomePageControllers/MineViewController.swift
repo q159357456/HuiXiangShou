@@ -39,22 +39,29 @@ class MineViewController: BaseViewController {
 extension MineViewController{
     func setUI() {
         
+        let topbgImgv: UIImageView = UIImageView(image: kGetImage(name: "mine_bg"))
+        topbgImgv.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 150)
+        self.view.addSubview(topbgImgv)
+        
         let scroview: UIScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - kNavigationBarHeight - kTabBarHeight))
         scroview.showsVerticalScrollIndicator = false
         self.view.addSubview(scroview)
         
         let top: TopView = TopView(frame: CGRect(x: 10, y: 30, width: SCREEN_WIDTH - 20, height: 180))
-        top.backgroundColor = randomColor()
+        top.layer.cornerRadius = 8
+//        top.layer.masksToBounds = true
         scroview.addSubview(top)
         self.topView = top
         
         let imageV: UIImageView = UIImageView(frame: CGRect(x: 10, y: top.maxY + 10, width: SCREEN_WIDTH - 20, height: 55))
         imageV.image = kGetImage(name: "mine_long")
-//        imageV.backgroundColor = .white
+        imageV.backgroundColor = .white
         scroview.addSubview(imageV)
         
         let view: UIView = UIView(frame: CGRect(x: 10, y: imageV.maxY + 10, width: SCREEN_WIDTH - 20, height: SCREEN_WIDTH - 100))
         view.backgroundColor = .white
+        view.layer.cornerRadius = 8
+        view.layer.masksToBounds = true
         scroview.addSubview(view)
         
         let w: CGFloat = view.width/3
@@ -82,6 +89,11 @@ extension MineViewController{
         self.topView?.imageV.kf.setImage(with: URL(string: self.memberInfo?.popimgurl ?? ""), placeholder: Hxs_PlaceHloder)
         self.topView?.label1.text = self.memberInfo?.MS002
         self.topView?.label2.text = "ID:\(self.memberInfo?.MS001 ?? "")"
+        self.topView?.button1.setTitle("成为合伙人>>", for: .normal)
+        self.topView?.label3.text = "大众会员"
+        self.topView?.label4.text = "未绑定手机号"
+        self.topView?.button2.setTitle("绑定手机", for: .normal)
+        
     }
 }
 
@@ -118,20 +130,25 @@ class TopView: UIView {
         label3.font = hxs_lightFont
         label4.font = hxs_lightFont
         
-//        
-//        imageV.backgroundColor = randomColor()
-//        label1.backgroundColor = randomColor()
-//        label2.backgroundColor = randomColor()
-        label3.backgroundColor = randomColor()
-        label4.backgroundColor = randomColor()
-        button1.backgroundColor = randomColor()
-        button2.backgroundColor = randomColor()
-      
+        label3.textAlignment = .center
+        button1.titleLabel?.font = hxs_lightFont
+        button2.titleLabel?.font = hxs_lightFont
+        button1.setTitleColor(.blue, for: .normal)
+        button2.backgroundColor = .lightGray
+        label3.backgroundColor = .orange
+        label3.layer.cornerRadius = 15/2
+        button2.layer.cornerRadius = 15/2
+        button1.layer.masksToBounds = true
+        label3.layer.masksToBounds = true
         
+        imageV.layer.cornerRadius = 30
+        imageV.layer.masksToBounds = true
+        imageV.layer.borderWidth = 2
+        imageV.layer.borderColor = MainColor.cgColor
         imageV.snp.makeConstraints { (make) in
-            make.top.equalTo(self).offset(10)
+            make.top.equalTo(self).offset(-10)
             make.left.equalTo(self).offset(10)
-            make.size.equalTo(CGSize(width: 50, height: 50))
+            make.size.equalTo(CGSize(width: 60, height: 60))
         }
         label1.snp.makeConstraints { (make) in
             make.top.equalTo(self).offset(10)
@@ -168,20 +185,26 @@ class TopView: UIView {
             make.centerY.equalTo(label4.snp_centerY)
             make.left.equalTo(label4.snp_right).offset(2)
             make.height.equalTo(15)
-            make.width.equalTo(50)
+            make.width.equalTo(60)
         }
        
         
         let line: UIView = UIView(frame: CGRect(x: 0, y: self.height/2, width: self.width, height: 1))
-        line.backgroundColor = .lightGray
+        line.backgroundColor = MainBgColor
         self.addSubview(line)
         
         let temp: CGFloat = self.height*3/4
+        let lists: [String] = ["积分", "优惠券", "佣金", "营业额"]
+        
         for inx in 0..<4{
             let la1: UILabel = UILabel()
             let la2: UILabel = UILabel()
             self.addSubview(la1)
             self.addSubview(la2)
+            la1.textAlignment = .center
+            la2.textAlignment = .center
+            la2.text = lists[inx]
+            la1.text = "0.0"
             la1.snp.makeConstraints { (make) in
               make.top.equalTo(temp - 20)
               make.size.equalTo(CGSize(width: self.width/4, height: 15))
@@ -192,8 +215,8 @@ class TopView: UIView {
                 make.size.equalTo(CGSize(width: self.width/4, height: 15))
                 make.left.equalTo(self.width * CGFloat(inx)/4)
             }
-            la1.backgroundColor = randomColor()
-            la2.backgroundColor = randomColor()
+//            la1.backgroundColor = randomColor()
+//            la2.backgroundColor = randomColor()
             la1.font = hxs_lightFont
             la2.font = hxs_lightFont
             la1.textColor = .red

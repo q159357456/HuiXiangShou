@@ -21,12 +21,12 @@ class StoreViewController: BaseViewController {
     lazy var cycleView: CyclePlayView = {
         let cycleview: CyclePlayView  = CyclePlayView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2), direction: .lelt)
         cycleview.cycleViewContent = .imgModel
-        cycleview.pictures = ["placeHolder","placeHolder","placeHolder","placeHolder"];
+        cycleview.pictures = ["placeHolder","placeHolder"];
         return cycleview
     }()
 
     lazy var topView: UIView = {
-        let imaglist: [String] = ["placeHolder","placeHolder","placeHolder"]
+        let imaglist: [String] = ["storeTop_1","storeTop_3","storeTop_2"]
         let titlelist: [String] = ["0.0积分","兑换记录","全部商品"]
         let view: UIView = UIView(frame: CGRect(x: 0, y: self.cycleView.maxY, width: SCREEN_WIDTH, height: 50))
         view.backgroundColor = .white
@@ -37,7 +37,7 @@ class StoreViewController: BaseViewController {
             btn.tag  = inx + 1
             btn.setImage(kGetImage(name: imaglist[inx]), for: .normal)
             btn.setTitle(titlelist[inx], for: .normal)
-            btn.imgSize = CGSize(width: 30, height: 30)
+            btn.imgSize = CGSize(width: 20, height: 20)
             btn.btnType = .leftRight
             btn.labelImgOffset = 5
             btn.titleLabel?.font = hxs_lightFont

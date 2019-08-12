@@ -35,6 +35,10 @@ class SearchTapView: UIView {
         self.addSubview(self.label!)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapClick))
         self.addGestureRecognizer(tap)
+        
+        let tipimagev: UIImageView = UIImageView(image: kGetImage(name: "search"))
+        tipimagev.frame = CGRect(x: self.width - 40, y: (self.height - 20)/2, width: 20, height: 20)
+        self.addSubview(tipimagev)
         callback = block
     }
     

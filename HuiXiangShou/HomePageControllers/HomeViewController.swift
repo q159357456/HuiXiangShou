@@ -41,21 +41,36 @@ extension HomeViewController{
         let forthView: UIView = UIView()
         let fiveView: UIView = UIView()
         let sixView: UIView = UIView()
+        let lin1: UIView = UIView()
+        let lin2: UIView = UIView()
         scroView.addSubview(oneView)
         scroView.addSubview(secondView)
         scroView.addSubview(thirdView)
         scroView.addSubview(forthView)
         scroView.addSubview(fiveView)
         scroView.addSubview(sixView)
+        scroView.addSubview(lin1)
+        scroView.addSubview(lin2)
+        lin1.backgroundColor = MainBgColor
+        lin2.backgroundColor = MainBgColor
+
         
         oneView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
         secondView.frame = CGRect(x: 0, y: oneView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
         thirdView.frame = CGRect(x: 0, y: secondView.maxY, width: SCREEN_WIDTH, height: W_Scale(x: 80))
-        forthView.frame = CGRect(x: 0, y: thirdView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
-        fiveView.frame = CGRect(x: 0, y:forthView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH*2/3)
+        lin1.frame = CGRect(x: 0, y: thirdView.maxY, width: SCREEN_WIDTH, height: 8)
+        forthView.frame = CGRect(x: 0, y: lin1.maxY, width: SCREEN_WIDTH, height: 210)
+        lin2.frame = CGRect(x: 0, y: forthView.maxY, width: SCREEN_WIDTH, height: 8)
+        fiveView.frame = CGRect(x: 0, y:lin2.maxY, width: SCREEN_WIDTH, height: 250)
         sixView.frame = CGRect(x: 0, y: fiveView.maxY, width: SCREEN_WIDTH, height: W_Scale(x: 170+18*2)+20+80)
 
+        
+        
+        
+        
         scroView.contentSize = CGSize(width: SCREEN_WIDTH, height: sixView.maxY)
+        
+        
         
         let cycleImgV: CyclePlayView = CyclePlayView(frame: oneView.bounds, direction: .lelt)
         cycleImgV.cycleViewContent = .imgModel
@@ -114,13 +129,16 @@ extension HomeViewController{
                 classImagelist.append(pic)
                 titlelist.append(title)
             }
+            classImagelist.append("allClassfy")
+            titlelist.append("全部分类")
         }else
         {
             classImagelist = ["placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder"];
             titlelist = ["","","","","","","","","",""];
             
         }
-        for inx in 0..<classImagelist.count {
+      
+        for inx in 0..<classImagelist.count  {
             let w:CGFloat = secondView.width/5
             let h: CGFloat = secondView.height/2
             let x:CGFloat = w * CGFloat(inx%5)
@@ -168,8 +186,15 @@ extension HomeViewController{
             forthView.addSubview(label)
             
         }
+        let v4_imageV: UIImageView = UIImageView(image: kGetImage(name: "mine_long"))
+        v4_imageV.frame = CGRect(x: 10, y: forthView.height - 55, width: forthView.width-20, height: 50)
+        forthView.addSubview(v4_imageV)
         
         
+        
+        let lael: UILabel = UILabel(frame: CGRect(x: 10, y: 10, width: fiveView.width - 20, height: 15))
+        lael.text = "热门会员套餐"
+        fiveView.addSubview(lael)
         if self.goodsArray != nil {
             let count: Int = self.goodsArray!.count
             for inx in 0..<count {
@@ -177,7 +202,7 @@ extension HomeViewController{
                 let w:CGFloat = (fiveView.width - 3 * space)/2
                 let h: CGFloat = w/2
                 let x:CGFloat = (w + space) * CGFloat(inx%2)  + space
-                let y:CGFloat  = CGFloat(inx/2)*(h + space) + space
+                let y:CGFloat  = CGFloat(inx/2)*(h + space) + space + lael.maxY + 5
                 let hot: HotComboView = HotComboView(frame: CGRect(x: x, y: y, width: w, height: h))
                 let goodmodel: GoodsListModel = self.goodsArray![inx]
                 hot.label1.text = goodmodel.ProductName
@@ -185,7 +210,6 @@ extension HomeViewController{
                 hot.label1.textColor = .red
                 hot.label2.textColor = .red
                 fiveView.addSubview(hot)
-//                hot.backgroundColor = .red
             }
         }
        

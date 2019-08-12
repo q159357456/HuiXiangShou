@@ -48,6 +48,8 @@
 		7F6DA02B22FD0CC5003D5386 /* ProSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02A22FD0CC5003D5386 /* ProSearchViewController.swift */; };
 		7F6DA02E22FD103C003D5386 /* QGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02D22FD103C003D5386 /* QGNavigationController.swift */; };
 		7F6DA03122FD5116003D5386 /* CityChooseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA03022FD5116003D5386 /* CityChooseController.swift */; };
+		7F6DA034230150A0003D5386 /* ProDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA033230150A0003D5386 /* ProDetailController.swift */; };
+		7F6DA036230159B8003D5386 /* ProDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA035230159B8003D5386 /* ProDetailModel.swift */; };
 		7FEFEDF322EE8D7D006FFC2A /* ProListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF222EE8D7D006FFC2A /* ProListTableViewCell.swift */; };
 		7FEFEDF522EE8DC6006FFC2A /* ProCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */; };
 		7FEFEDF722EEBF03006FFC2A /* ThemeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF622EEBF03006FFC2A /* ThemeTitleView.swift */; };
@@ -102,6 +104,8 @@
 		7F6DA02A22FD0CC5003D5386 /* ProSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSearchViewController.swift; sourceTree = "<group>"; };
 		7F6DA02D22FD103C003D5386 /* QGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QGNavigationController.swift; sourceTree = "<group>"; };
 		7F6DA03022FD5116003D5386 /* CityChooseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityChooseController.swift; sourceTree = "<group>"; };
+		7F6DA033230150A0003D5386 /* ProDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProDetailController.swift; sourceTree = "<group>"; };
+		7F6DA035230159B8003D5386 /* ProDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProDetailModel.swift; sourceTree = "<group>"; };
 		7FEFEDF222EE8D7D006FFC2A /* ProListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProListTableViewCell.swift; sourceTree = "<group>"; };
 		7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCollectionViewCell.swift; sourceTree = "<group>"; };
 		7FEFEDF622EEBF03006FFC2A /* ThemeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTitleView.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				7F16773C22E693E500245E9D /* ViewController.swift */,
 				7F16773E22E693E500245E9D /* Main.storyboard */,
 				7C12BFEB22F540E500AFD0A3 /* HuiXiangShou-Bridging-Header.h */,
+				7F6DA03223015089003D5386 /* ProductDetail */,
 				7F6DA02F22FD484C003D5386 /* Location */,
 				7F6DA02722FD0C84003D5386 /* Search */,
 				7F6DA01222F42F94003D5386 /* RequestManager */,
@@ -290,6 +295,15 @@
 				7F6DA03022FD5116003D5386 /* CityChooseController.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		7F6DA03223015089003D5386 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7F6DA033230150A0003D5386 /* ProDetailController.swift */,
+				7F6DA035230159B8003D5386 /* ProDetailModel.swift */,
+			);
+			path = ProductDetail;
 			sourceTree = "<group>";
 		};
 		7FEFEDFA22F01EA7006FFC2A /* NetWork */ = {
@@ -437,6 +451,7 @@
 				7F6DA00122F294EA003D5386 /* UIviewExtension.swift in Sources */,
 				7F6DA01422F42FBD003D5386 /* RequestManager.swift in Sources */,
 				7F6DA02022FAC042003D5386 /* ShopCollectionViewCell.swift in Sources */,
+				7F6DA036230159B8003D5386 /* ProDetailModel.swift in Sources */,
 				7C12BFF422F57B5A00AFD0A3 /* RequestPrintResultPlugins.swift in Sources */,
 				7F6DA02B22FD0CC5003D5386 /* ProSearchViewController.swift in Sources */,
 				7F6DA02E22FD103C003D5386 /* QGNavigationController.swift in Sources */,
@@ -447,6 +462,7 @@
 				7FEFEDF922EED2CF006FFC2A /* CyclePlayView.swift in Sources */,
 				7C12BFCA22ECA29A00AFD0A3 /* ShopViewController.swift in Sources */,
 				7F6DA01A22F818A3003D5386 /* MapableExtention.swift in Sources */,
+				7F6DA034230150A0003D5386 /* ProDetailController.swift in Sources */,
 				7F6DA00922F2C149003D5386 /* RequestBaseModel.swift in Sources */,
 				7C12BFC822ECA29000AFD0A3 /* HomeViewController.swift in Sources */,
 				7F6DA00B22F2C166003D5386 /* ResponseBaseModel.swift in Sources */,

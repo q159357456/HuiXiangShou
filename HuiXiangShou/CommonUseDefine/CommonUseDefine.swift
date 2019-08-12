@@ -203,3 +203,11 @@ public func Hfx_Sign(params: String?, time: String) -> String?{
     
 }
 
+
+var DefaultCity: CityInfo {
+    let city: CityInfo = CityInfo()
+    city.cityName = "东莞市"
+    city.cityCode = "441900"
+    return city
+}
+

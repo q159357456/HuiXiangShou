@@ -13,6 +13,8 @@ class ShopViewController: BaseViewController {
     var collectionView: UICollectionView?
     
     var dataArray = [ShopModel]()
+    var cityBtn: UIButton?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,14 +54,19 @@ extension ShopViewController{
         let btn: UIButton = UIButton(type: .custom)
         
         btn.frame = CGRect(x: 10, y: 10, width: 60, height: 30)
-        btn.backgroundColor = randomColor()
+        btn.setTitle(DefaultCity.cityName!, for: .normal)
         btn.addTarget(self, action: #selector(chooseCity), for: .touchUpInside)
+        btn.setTitleColor(.black, for: .normal)
+        btn.titleLabel?.font = kSystemFont(font: 15)
         topview.addSubview(btn)
+        self.cityBtn = btn
         let search: SearchTapView = SearchTapView.init(CGRect(x: 80, y: 10, width: topview.width - 130, height: 30)) {
             let vc: ShopSearchViewController = ShopSearchViewController()
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
+        
+      
         search.txt = "搜索商品"
         topview.addSubview(search)
         
@@ -68,7 +75,7 @@ extension ShopViewController{
         secondView.addSubview(label)
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: SCREEN_WIDTH - 20, height: 100)
+        layout.itemSize = CGSize(width: SCREEN_WIDTH - 20, height: 130)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         let collection: UICollectionView = UICollectionView(frame: CGRect(x: 0, y: secondView.maxY, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - secondView.maxY - kNavigationBarHeight - kTabBarHeight), collectionViewLayout: layout)
@@ -106,6 +113,9 @@ extension ShopViewController{
     
     @objc func chooseCity()  {
         let vc = CityChooseController()
+        vc.callBack = {[weak self]  (data: CityInfo) in
+            self?.cityBtn?.setTitle(data.cityName, for: .normal)
+        }
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

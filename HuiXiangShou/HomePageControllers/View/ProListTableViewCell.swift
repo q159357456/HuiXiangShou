@@ -85,7 +85,11 @@ extension ProListTableViewCell: UICollectionViewDataSource{
 extension ProListTableViewCell: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let model: ProductModel = self.dataList![indexPath.item]
+        let vc: ProDetailController = ProDetailController()
+        vc.shopid = model.shopid ?? ""
+        vc.productid = model.ProductNo ?? ""
+        kAppDelegate.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
