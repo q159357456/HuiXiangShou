@@ -76,10 +76,10 @@ class ShopCollectionViewCell: UICollectionViewCell {
         self.label3?.backgroundColor = HEX(hexValue: 0xD4E9A6)
         self.label3?.textColor = .white
         self.label3?.textAlignment = .center
-        self.imageV?.frame = CGRect(x: W_Scale(x: 10), y: W_Scale(x: 10), width:  100, height: 100)
-        self.label1?.frame = CGRect(x: self.imageV!.maxX + W_Scale(x: 10), y: self.imageV!.y, width: self.width - imageV!.width - W_Scale(x: 20), height: 15)
-        self.label2?.frame = CGRect(x: self.imageV!.maxX + W_Scale(x: 10), y: self.label1!.maxY+10, width: 60, height: 15)
-        self.label3?.frame = CGRect(x: self.imageV!.maxX + W_Scale(x: 10), y: self.label2!.maxY+10, width: 70, height: 25)
+        self.imageV?.frame = CGRect(x: W_Scale(10), y: W_Scale(10), width:  100, height: 100)
+        self.label1?.frame = CGRect(x: self.imageV!.maxX + W_Scale(10), y: self.imageV!.y, width: self.width - imageV!.width - W_Scale(20), height: 15)
+        self.label2?.frame = CGRect(x: self.imageV!.maxX + W_Scale(10), y: self.label1!.maxY+10, width: 60, height: 15)
+        self.label3?.frame = CGRect(x: self.imageV!.maxX + W_Scale(10), y: self.label2!.maxY+10, width: 70, height: 25)
         
         self.hotImgV1.frame = CGRect(x: self.label2?.maxX ?? 0 + 5, y:self.label2?.y ?? 0 , width: 15, height: 15)
         self.hotImgV2.frame = CGRect(x: self.hotImgV1.maxX + 2 , y:self.label2?.y ?? 0 , width: 15, height: 15)

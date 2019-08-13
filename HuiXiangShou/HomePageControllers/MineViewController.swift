@@ -159,7 +159,7 @@ class TopView: UIView {
         label2.snp.makeConstraints { (make) in
             make.top.equalTo(label1.snp_bottom).offset(5)
             make.left.equalTo(imageV.snp_right).offset(10)
-            make.height.equalTo(W_Scale(x: 15))
+            make.height.equalTo(W_Scale(15))
             make.right.equalTo(self)
         }
         button1.snp.makeConstraints { (make) in

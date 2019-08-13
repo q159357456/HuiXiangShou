@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
             let requset = RequestBaseModel()
             requset.sign = "string"
             requset.dataList.mobile = "13326859806"
-            requset.dataList.password = "123456"
+            requset.dataList.password = "654321"
             let reqs: String = requset.toJSONString()!
             let provider = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: self.view),
                                                               RequestCodeHnadlePlugin(),RequestPrintResultPlugin()])

@@ -10,7 +10,7 @@ import UIKit
 import PromiseKit
 class CityChooseController: BaseViewController{
     lazy var tableView: UITableView = {
-        let table: UITableView = UITableView(frame: CGRect(x: 0, y: 0, width: W_Scale(x: 100), height: SCREEN_HEIGHT - kNavigationBarHeight), style: .plain)
+        let table: UITableView = UITableView(frame: CGRect(x: 0, y: 0, width: W_Scale(100), height: SCREEN_HEIGHT - kNavigationBarHeight), style: .plain)
         table.regist(UITableViewCell.self)
         table.delegate = self
         table.dataSource = self
@@ -18,13 +18,13 @@ class CityChooseController: BaseViewController{
     }()
     
     lazy var collectionView: UICollectionView = {
-        let w: CGFloat = SCREEN_WIDTH - W_Scale(x: 100)
+        let w: CGFloat = SCREEN_WIDTH - W_Scale(100)
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (w - 30)/2, height: 50)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        let collection: UICollectionView = UICollectionView(frame: CGRect(x: self.tableView.maxX, y: 0, width: SCREEN_WIDTH - W_Scale(x: 100), height: self.tableView.height), collectionViewLayout: layout)
+        let collection: UICollectionView = UICollectionView(frame: CGRect(x: self.tableView.maxX, y: 0, width: SCREEN_WIDTH - W_Scale(100), height: self.tableView.height), collectionViewLayout: layout)
         collection.regist(CityChooseCollectionCell.self)
         collection.backgroundColor = MainBgColor
         collection.delegate = self

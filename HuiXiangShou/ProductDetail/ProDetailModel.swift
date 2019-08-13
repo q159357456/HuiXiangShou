@@ -63,10 +63,10 @@ class ProDetailModel: Mappable {
     var ProductNo: String?
     var ProductSpec: String?
     var Property: String?
-    var RetailPrice: String?
+    var RetailPrice: Int?
     var SellQty: Int?
-    var StanPrice: String?
-    var StanPurPrice: String?
+    var StanPrice: Int?
+    var StanPurPrice: Int?
     var SupplierName: String?
     var SupplierNo: String?
     var Unit: String?

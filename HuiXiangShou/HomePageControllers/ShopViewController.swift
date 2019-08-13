@@ -18,13 +18,15 @@ class ShopViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUI()
+        
         let base: RequestBaseModel = RequestBaseModel()
         base.basedata.pageindex = 1
         base.basedata.pagesize = 10
         
-        base.dataList.lat = "39.922705"
-        base.dataList.lng = "116.416637"
+        base.dataList.lat = CurenntCoordinate.latitude
+        base.dataList.lng = CurenntCoordinate.latitude
         base.dataList.cityno = ""
         let sign: String = "\(base.basedata.toOrderJson()!)&\(base.dataList.toOrderJson()!)"
         base.sign = Hfx_Sign(params: sign, time: base.timestamp)
