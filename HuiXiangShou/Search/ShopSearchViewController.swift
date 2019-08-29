@@ -28,7 +28,7 @@ class ShopSearchViewController: BaseViewController {
         filter.addFuntion(.BusinessArea) { (data) in
             print(data)
         }
-        
+
         self.view.addSubview(filter)
         // Do any additional setup after loading the view.
     }
