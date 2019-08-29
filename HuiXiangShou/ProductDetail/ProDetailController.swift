@@ -60,17 +60,6 @@ class ProDetailController: BaseViewController {
     }
 
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 class ProductDetailTopView: UIView {
@@ -115,11 +104,7 @@ class ProductDetailTopView: UIView {
         bgView.addSubview(label3)
         bgView.addSubview(label4)
         bgView.addSubview(label5)
-//        label1.backgroundColor = randomColor()
-//        label2.backgroundColor = randomColor()
-//        label3.backgroundColor = randomColor()
-//        label4.backgroundColor = randomColor()
-//        label5.backgroundColor = randomColor()
+
         label3.numberOfLines = 0
         label3.font = kSystemFont(font: 14)
         label2.snp.makeConstraints { (make) in
@@ -188,4 +173,13 @@ class ProductDetailTopView: UIView {
     class func selfHeight() -> CGFloat {
          return SCREEN_WIDTH/2 + W_Scale(120) + 40 + 20
     }
+}
+
+///////
+class PopSpecvView: UIView {
+    
+    var datalist: [ListSpecModel]?
+    
+    
+    
 }

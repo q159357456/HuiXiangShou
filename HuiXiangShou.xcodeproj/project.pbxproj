@@ -13,7 +13,6 @@
 		7C12BFCA22ECA29A00AFD0A3 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFC922ECA29A00AFD0A3 /* ShopViewController.swift */; };
 		7C12BFCC22ECA2BF00AFD0A3 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFCB22ECA2BF00AFD0A3 /* StoreViewController.swift */; };
 		7C12BFCE22ECA2D600AFD0A3 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFCD22ECA2D600AFD0A3 /* MineViewController.swift */; };
-		7C12BFD022ED390500AFD0A3 /* QGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFCF22ED390500AFD0A3 /* QGNavigationController.swift */; };
 		7C12BFD522ED3ADF00AFD0A3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD422ED3ADF00AFD0A3 /* BaseViewController.swift */; };
 		7C12BFD822ED421B00AFD0A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD722ED421B00AFD0A3 /* LoginViewController.swift */; };
 		7C12BFDA22ED95D600AFD0A3 /* LIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD922ED95D600AFD0A3 /* LIButton.swift */; };
@@ -67,7 +66,6 @@
 		7C12BFC922ECA29A00AFD0A3 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		7C12BFCB22ECA2BF00AFD0A3 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		7C12BFCD22ECA2D600AFD0A3 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
-		7C12BFCF22ED390500AFD0A3 /* QGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QGNavigationController.swift; path = HuiXiangShou/NavgationController/QGNavigationController.swift; sourceTree = SOURCE_ROOT; };
 		7C12BFD422ED3ADF00AFD0A3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7C12BFD722ED421B00AFD0A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7C12BFD922ED95D600AFD0A3 /* LIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIButton.swift; sourceTree = "<group>"; };
@@ -204,14 +202,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7CD3C18F22EC9F09007640AB /* NavgationController */ = {
-			isa = PBXGroup;
-			children = (
-				7C12BFCF22ED390500AFD0A3 /* QGNavigationController.swift */,
-			);
-			path = NavgationController;
-			sourceTree = SOURCE_ROOT;
-		};
 		7F16772E22E693E500245E9D = {
 			isa = PBXGroup;
 			children = (
@@ -329,7 +319,6 @@
 		EDE50E991D2682FB00CAE0C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7CD3C18F22EC9F09007640AB /* NavgationController */,
 				8C2288061EA3238A02DC149A /* libPods-HuiXiangShou.a */,
 			);
 			name = Frameworks;
@@ -440,7 +429,6 @@
 				7C12BFCC22ECA2BF00AFD0A3 /* StoreViewController.swift in Sources */,
 				7C12BFE622F48BD500AFD0A3 /* DataExtention.swift in Sources */,
 				7F6DA01C22FA60D7003D5386 /* CommonUseNetWork.swift in Sources */,
-				7C12BFD022ED390500AFD0A3 /* QGNavigationController.swift in Sources */,
 				7C12BFCE22ECA2D600AFD0A3 /* MineViewController.swift in Sources */,
 				7CD3C18D22EC9508007640AB /* UILabelExtension.swift in Sources */,
 				7F6DA02422FAC5A5003D5386 /* UICollectionViewExtention.swift in Sources */,

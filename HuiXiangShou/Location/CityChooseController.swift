@@ -83,7 +83,7 @@ extension CityChooseController: UITableViewDelegate,UITableViewDataSource{
         seletIndexPath = indexPath
         
         let proinfo: ProvinceInfo = self.prolist[indexPath.row]
-        _ = getCityCode(proinfo.provCode ?? "", "").done{ citydata  in
+        _ = getCityInfo(proinfo.provCode ?? "", "").done{ citydata  in
             self.citylist = citydata
             self.collectionView.reloadData()
         }
