@@ -38,27 +38,27 @@ class FilterHandelView: UIView {
         let btn: LIButton = LIButton(frame: CGRect.zero)
         btn.setTitle(funType.rawValue, for: .normal)
         btn.btnType = .rightLeft
-        btn.imgSize = CGSize(width: 20, height: 20)
-        btn.labelImgOffset = 5
+        btn.imgSize = CGSize(width: 15, height: 15)
+        btn.labelImgOffset = 2
         btn.titleLabel?.font = hxs_lightFont
         self.btnList.append(btn)
         self.addSubview(btn)
         selfBlock = block
         switch funType {
         case .AllCity:
-            btn.setImage(Hxs_PlaceHloder, for: .normal)
+            btn.setImage(kGetImage(name: "filter_1"), for: .normal)
             btn.addTarget(self, action: #selector(AllCityAction(_:)), for: .touchUpInside)
             break
         case .Classify:
-            btn.setImage(Hxs_PlaceHloder, for: .normal)
+            btn.setImage(kGetImage(name: "filter_1"), for: .normal)
             btn.addTarget(self, action: #selector(ClassifyAction(_:)), for: .touchUpInside)
             break
         case .Rank:
-            btn.setImage(Hxs_PlaceHloder, for: .normal)
+            btn.setImage(kGetImage(name: "filter_1"), for: .normal)
             btn.addTarget(self, action: #selector(RankAction(_:)), for: .touchUpInside)
             break
         case .BusinessArea:
-            btn.setImage(Hxs_PlaceHloder, for: .normal)
+            btn.setImage(kGetImage(name: "filter_1"), for: .normal)
             btn.addTarget(self, action: #selector(BusinessAreaAction(_:)), for: .touchUpInside)
             break
         case .Composite:
@@ -104,7 +104,7 @@ class FilterHandelView: UIView {
 extension FilterHandelView{
 
     @objc func AllCityAction(_ btn: UIButton) {
-        _ = getTownInfo("").done({ (data) in
+        _ = getTownInfo(DefaultCity.cityCode!).done({ (data) in
             self.filType1.lsitdata =  data
             self.filType1.show {[weak self]  (tdata, name) in
                 btn.setTitle(name, for: .normal)

@@ -20,3 +20,4 @@ let WX_Key: String = ""
 let WX_Scret: String = ""
 let Hxs_PlaceHloder: UIImage = UIImage(named: "placeHolder")!
 
+

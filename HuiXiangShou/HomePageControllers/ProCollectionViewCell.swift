@@ -38,7 +38,7 @@ class ProCollectionViewCell: UICollectionViewCell {
 //        label2?.backgroundColor = UIColor.red
         
         imgView?.snp.makeConstraints({ (make) in
-            make.size.equalTo(CGSize(width: W_Scale(x: 170), height: W_Scale(x: 170)))
+            make.size.equalTo(CGSize(width: W_Scale(170), height: W_Scale(170)))
             make.top.equalTo(self.contentView)
             make.left.equalTo(self.contentView)
         })
@@ -47,7 +47,7 @@ class ProCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(imgView?.snp_bottom ?? 0)
             make.left.equalTo(self.contentView)
             make.right.equalTo(self.contentView)
-            make.height.equalTo(W_Scale(x: 18))
+            make.height.equalTo(W_Scale(18))
             
         })
         
@@ -55,7 +55,7 @@ class ProCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(label1?.snp_bottom ?? 0)
             make.left.equalTo(self.contentView)
             make.right.equalTo(self.contentView)
-            make.height.equalTo(W_Scale(x: 18))
+            make.height.equalTo(W_Scale(18))
         })
     }
     

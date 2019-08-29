@@ -40,4 +40,21 @@ extension String{
         return self.removingPercentEncoding ?? ""
     }
     
+    func toHtml() -> String {
+//        let styleStr: String = String(format: "<head><style>img{max-width:%ldpx !important;}ul {margin:0; padding:0; text-align:left;}</style><head>", SCREEN_WIDTH  * 0.95)
+//        let styleStr: String = String(format: "<head><style>body, div, span, a, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, th, td, pre, form, fieldset, legend, input, button, textarea, select {margin:0;padding:5;}img{max-width:%ldpx !important;}li {list-style:none;}</style><head>", SCREEN_WIDTH  * 0.95)
+        var str: String = self
+        let scaner: Scanner = Scanner.init(string: self)
+        let dict = ["&amp;":"&", "&lt;":"<", "&gt;":">", "&nbsp;":"", "&quot;":"\"", "width":"wid"]
+        while scaner.isAtEnd == false {
+            for (key, value) in dict {
+                scaner.scanUpTo(key, into: nil)
+                str = str.replacingOccurrences(of: key, with: value)
+                
+            }
+        }
+        
+        return str
+    }
+    
 }

@@ -56,7 +56,7 @@ class ProListTableViewCell: UITableViewCell {
     
     class func rowForHeight() -> CGFloat{
         
-         return W_Scale(x: 170+18*2) + 10
+         return W_Scale(170+18*2) + 10
     }
 
 }
@@ -85,7 +85,11 @@ extension ProListTableViewCell: UICollectionViewDataSource{
 extension ProListTableViewCell: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let model: ProductModel = self.dataList![indexPath.item]
+        let vc: ProDetailController = ProDetailController()
+        vc.shopid = model.shopid ?? ""
+        vc.productid = model.ProductNo ?? ""
+        kAppDelegate.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -94,7 +98,7 @@ extension ProListTableViewCell: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: W_Scale(x: 170), height:  W_Scale(x: 170+18*2))
+        return CGSize(width: W_Scale(170), height:  W_Scale(170+18*2))
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat{
         

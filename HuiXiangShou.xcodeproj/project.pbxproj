@@ -13,7 +13,6 @@
 		7C12BFCA22ECA29A00AFD0A3 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFC922ECA29A00AFD0A3 /* ShopViewController.swift */; };
 		7C12BFCC22ECA2BF00AFD0A3 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFCB22ECA2BF00AFD0A3 /* StoreViewController.swift */; };
 		7C12BFCE22ECA2D600AFD0A3 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFCD22ECA2D600AFD0A3 /* MineViewController.swift */; };
-		7C12BFD022ED390500AFD0A3 /* QGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFCF22ED390500AFD0A3 /* QGNavigationController.swift */; };
 		7C12BFD522ED3ADF00AFD0A3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD422ED3ADF00AFD0A3 /* BaseViewController.swift */; };
 		7C12BFD822ED421B00AFD0A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD722ED421B00AFD0A3 /* LoginViewController.swift */; };
 		7C12BFDA22ED95D600AFD0A3 /* LIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12BFD922ED95D600AFD0A3 /* LIButton.swift */; };
@@ -48,6 +47,9 @@
 		7F6DA02B22FD0CC5003D5386 /* ProSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02A22FD0CC5003D5386 /* ProSearchViewController.swift */; };
 		7F6DA02E22FD103C003D5386 /* QGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA02D22FD103C003D5386 /* QGNavigationController.swift */; };
 		7F6DA03122FD5116003D5386 /* CityChooseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA03022FD5116003D5386 /* CityChooseController.swift */; };
+		7F6DA034230150A0003D5386 /* ProDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA033230150A0003D5386 /* ProDetailController.swift */; };
+		7F6DA036230159B8003D5386 /* ProDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA035230159B8003D5386 /* ProDetailModel.swift */; };
+		7F6DA0382302AC76003D5386 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6DA0372302AC76003D5386 /* LocationManager.swift */; };
 		7FEFEDF322EE8D7D006FFC2A /* ProListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF222EE8D7D006FFC2A /* ProListTableViewCell.swift */; };
 		7FEFEDF522EE8DC6006FFC2A /* ProCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */; };
 		7FEFEDF722EEBF03006FFC2A /* ThemeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFEDF622EEBF03006FFC2A /* ThemeTitleView.swift */; };
@@ -64,7 +66,6 @@
 		7C12BFC922ECA29A00AFD0A3 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		7C12BFCB22ECA2BF00AFD0A3 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		7C12BFCD22ECA2D600AFD0A3 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
-		7C12BFCF22ED390500AFD0A3 /* QGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QGNavigationController.swift; path = HuiXiangShou/NavgationController/QGNavigationController.swift; sourceTree = SOURCE_ROOT; };
 		7C12BFD422ED3ADF00AFD0A3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7C12BFD722ED421B00AFD0A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7C12BFD922ED95D600AFD0A3 /* LIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIButton.swift; sourceTree = "<group>"; };
@@ -102,6 +103,9 @@
 		7F6DA02A22FD0CC5003D5386 /* ProSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProSearchViewController.swift; sourceTree = "<group>"; };
 		7F6DA02D22FD103C003D5386 /* QGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QGNavigationController.swift; sourceTree = "<group>"; };
 		7F6DA03022FD5116003D5386 /* CityChooseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityChooseController.swift; sourceTree = "<group>"; };
+		7F6DA033230150A0003D5386 /* ProDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProDetailController.swift; sourceTree = "<group>"; };
+		7F6DA035230159B8003D5386 /* ProDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProDetailModel.swift; sourceTree = "<group>"; };
+		7F6DA0372302AC76003D5386 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7FEFEDF222EE8D7D006FFC2A /* ProListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProListTableViewCell.swift; sourceTree = "<group>"; };
 		7FEFEDF422EE8DC6006FFC2A /* ProCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCollectionViewCell.swift; sourceTree = "<group>"; };
 		7FEFEDF622EEBF03006FFC2A /* ThemeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTitleView.swift; sourceTree = "<group>"; };
@@ -198,14 +202,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7CD3C18F22EC9F09007640AB /* NavgationController */ = {
-			isa = PBXGroup;
-			children = (
-				7C12BFCF22ED390500AFD0A3 /* QGNavigationController.swift */,
-			);
-			path = NavgationController;
-			sourceTree = SOURCE_ROOT;
-		};
 		7F16772E22E693E500245E9D = {
 			isa = PBXGroup;
 			children = (
@@ -228,9 +224,10 @@
 			isa = PBXGroup;
 			children = (
 				7F16773A22E693E500245E9D /* AppDelegate.swift */,
-				7F16773C22E693E500245E9D /* ViewController.swift */,
 				7F16773E22E693E500245E9D /* Main.storyboard */,
+				7F16773C22E693E500245E9D /* ViewController.swift */,
 				7C12BFEB22F540E500AFD0A3 /* HuiXiangShou-Bridging-Header.h */,
+				7F6DA03223015089003D5386 /* ProductDetail */,
 				7F6DA02F22FD484C003D5386 /* Location */,
 				7F6DA02722FD0C84003D5386 /* Search */,
 				7F6DA01222F42F94003D5386 /* RequestManager */,
@@ -288,8 +285,18 @@
 			isa = PBXGroup;
 			children = (
 				7F6DA03022FD5116003D5386 /* CityChooseController.swift */,
+				7F6DA0372302AC76003D5386 /* LocationManager.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		7F6DA03223015089003D5386 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7F6DA033230150A0003D5386 /* ProDetailController.swift */,
+				7F6DA035230159B8003D5386 /* ProDetailModel.swift */,
+			);
+			path = ProductDetail;
 			sourceTree = "<group>";
 		};
 		7FEFEDFA22F01EA7006FFC2A /* NetWork */ = {
@@ -312,7 +319,6 @@
 		EDE50E991D2682FB00CAE0C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7CD3C18F22EC9F09007640AB /* NavgationController */,
 				8C2288061EA3238A02DC149A /* libPods-HuiXiangShou.a */,
 			);
 			name = Frameworks;
@@ -415,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6DA0382302AC76003D5386 /* LocationManager.swift in Sources */,
 				7C12BFDE22EDBAA700AFD0A3 /* HotComboView.swift in Sources */,
 				7F6DA00322F29564003D5386 /* DateExtension.swift in Sources */,
 				7C12BFE022F12E6400AFD0A3 /* UserModel.swift in Sources */,
@@ -422,7 +429,6 @@
 				7C12BFCC22ECA2BF00AFD0A3 /* StoreViewController.swift in Sources */,
 				7C12BFE622F48BD500AFD0A3 /* DataExtention.swift in Sources */,
 				7F6DA01C22FA60D7003D5386 /* CommonUseNetWork.swift in Sources */,
-				7C12BFD022ED390500AFD0A3 /* QGNavigationController.swift in Sources */,
 				7C12BFCE22ECA2D600AFD0A3 /* MineViewController.swift in Sources */,
 				7CD3C18D22EC9508007640AB /* UILabelExtension.swift in Sources */,
 				7F6DA02422FAC5A5003D5386 /* UICollectionViewExtention.swift in Sources */,
@@ -437,6 +443,7 @@
 				7F6DA00122F294EA003D5386 /* UIviewExtension.swift in Sources */,
 				7F6DA01422F42FBD003D5386 /* RequestManager.swift in Sources */,
 				7F6DA02022FAC042003D5386 /* ShopCollectionViewCell.swift in Sources */,
+				7F6DA036230159B8003D5386 /* ProDetailModel.swift in Sources */,
 				7C12BFF422F57B5A00AFD0A3 /* RequestPrintResultPlugins.swift in Sources */,
 				7F6DA02B22FD0CC5003D5386 /* ProSearchViewController.swift in Sources */,
 				7F6DA02E22FD103C003D5386 /* QGNavigationController.swift in Sources */,
@@ -447,6 +454,7 @@
 				7FEFEDF922EED2CF006FFC2A /* CyclePlayView.swift in Sources */,
 				7C12BFCA22ECA29A00AFD0A3 /* ShopViewController.swift in Sources */,
 				7F6DA01A22F818A3003D5386 /* MapableExtention.swift in Sources */,
+				7F6DA034230150A0003D5386 /* ProDetailController.swift in Sources */,
 				7F6DA00922F2C149003D5386 /* RequestBaseModel.swift in Sources */,
 				7C12BFC822ECA29000AFD0A3 /* HomeViewController.swift in Sources */,
 				7F6DA00B22F2C166003D5386 /* ResponseBaseModel.swift in Sources */,

@@ -21,6 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
         listenLoginStatus()
+        //定位
+        LocationManager.singleton.creatLocationManager().startLocation { (cllocation, adress, erro) in
+            if erro == nil{
+                print(cllocation!.coordinate.latitude)
+                print(cllocation!.coordinate.longitude)
+                print(adress ?? "")
+                CurenntCoordinate = Hxs_Coordinate(latitude:  String(cllocation!.coordinate.latitude), longitude: String(cllocation!.coordinate.longitude))
+            }
+        }
         return true
     }
 

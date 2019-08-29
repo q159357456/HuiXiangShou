@@ -18,7 +18,7 @@ class ThemeTitleView: UIView {
         button = UIButton(type: .custom)
         super.init(frame: frame)
         self.backgroundColor = .white
-        label?.frame = CGRect(x: 10, y: 0, width: W_Scale(x: 200), height: self.height)
+        label?.frame = CGRect(x: 10, y: 0, width: W_Scale(200), height: self.height)
         button?.frame = CGRect(x: self.width-10-50, y: (self.height-25)/2, width: 55, height: 25)
         button?.setTitle("更多>>", for: .normal)
         button?.titleLabel?.font = kSystemFont(font: 14)

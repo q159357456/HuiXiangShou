@@ -72,7 +72,7 @@ func kSystemFont(font: CGFloat) -> (UIFont) {
 
 var hxs_lightFont: UIFont{
     
-    return kSystemFont(font: W_Scale(x: 13))
+    return kSystemFont(font: W_Scale(13))
 }
 
 
@@ -141,7 +141,7 @@ let Scale_Height = iPhoneX ? 736.0/667.0 : SCREEN_HEIGHT / 667
 let Scale_Width = SCREEN_WIDTH / 375
 
 
-func W_Scale(x:CGFloat) -> CGFloat {
+func W_Scale(_ x:CGFloat) -> CGFloat {
     
     return Scale_Width * x
     
@@ -203,3 +203,17 @@ public func Hfx_Sign(params: String?, time: String) -> String?{
     
 }
 
+
+var DefaultCity: CityInfo {
+    let city: CityInfo = CityInfo()
+    city.cityName = "东莞市"
+    city.cityCode = "441900"
+    return city
+}
+
+struct Hxs_Coordinate {
+    var latitude: String?
+    var longitude: String?
+    
+}
+var CurenntCoordinate: Hxs_Coordinate = Hxs_Coordinate.init(latitude: "39.922705", longitude: "116.416637")

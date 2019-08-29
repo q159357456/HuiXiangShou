@@ -39,8 +39,8 @@ func getProvinceInfo() -> Promise<[ProvinceInfo]>{
 
 //市
 
-func getCityCode(_ provCode: String, _ cityName: String) -> Promise<[CityInfo]>{
-    let provider1 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: kAppDelegate.window!),RequestPrintResultPlugin()])
+func getCityInfo(_ provCode: String, _ cityName: String) -> Promise<[CityInfo]>{
+    let provider1 = MoyaProvider<ApiManager>(plugins: [RequestHitPlugin(view: kAppDelegate.window!)])
     let req:Promise<[CityInfo]> = requestObjListAPI(provider1, CityInfo.self, .SysGetCityInfo(provCode: provCode, cityName: cityName))
     return req
 

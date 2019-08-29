@@ -41,21 +41,36 @@ extension HomeViewController{
         let forthView: UIView = UIView()
         let fiveView: UIView = UIView()
         let sixView: UIView = UIView()
+        let lin1: UIView = UIView()
+        let lin2: UIView = UIView()
         scroView.addSubview(oneView)
         scroView.addSubview(secondView)
         scroView.addSubview(thirdView)
         scroView.addSubview(forthView)
         scroView.addSubview(fiveView)
         scroView.addSubview(sixView)
+        scroView.addSubview(lin1)
+        scroView.addSubview(lin2)
+        lin1.backgroundColor = MainBgColor
+        lin2.backgroundColor = MainBgColor
+
         
         oneView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
         secondView.frame = CGRect(x: 0, y: oneView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
-        thirdView.frame = CGRect(x: 0, y: secondView.maxY, width: SCREEN_WIDTH, height: W_Scale(x: 80))
-        forthView.frame = CGRect(x: 0, y: thirdView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH/2)
-        fiveView.frame = CGRect(x: 0, y:forthView.maxY, width: SCREEN_WIDTH, height: SCREEN_WIDTH*2/3)
-        sixView.frame = CGRect(x: 0, y: fiveView.maxY, width: SCREEN_WIDTH, height: W_Scale(x: 170+18*2)+20+80)
+        thirdView.frame = CGRect(x: 0, y: secondView.maxY, width: SCREEN_WIDTH, height: W_Scale(80))
+        lin1.frame = CGRect(x: 0, y: thirdView.maxY, width: SCREEN_WIDTH, height: 8)
+        forthView.frame = CGRect(x: 0, y: lin1.maxY, width: SCREEN_WIDTH, height: 210)
+        lin2.frame = CGRect(x: 0, y: forthView.maxY, width: SCREEN_WIDTH, height: 8)
+        fiveView.frame = CGRect(x: 0, y:lin2.maxY, width: SCREEN_WIDTH, height: 250)
+        sixView.frame = CGRect(x: 0, y: fiveView.maxY, width: SCREEN_WIDTH, height: W_Scale(170+18*2)+20+80)
 
+        
+        
+        
+        
         scroView.contentSize = CGSize(width: SCREEN_WIDTH, height: sixView.maxY)
+        
+        
         
         let cycleImgV: CyclePlayView = CyclePlayView(frame: oneView.bounds, direction: .lelt)
         cycleImgV.cycleViewContent = .imgModel
@@ -82,8 +97,8 @@ extension HomeViewController{
         
         
         
-        let v3_imagev: UIImageView = UIImageView(frame: CGRect(x: 15, y: W_Scale(x: 10), width: W_Scale(x: 60), height: W_Scale(x: 60)))
-        let line: UIView = UIView(frame: CGRect(x: v3_imagev.maxX+10, y: W_Scale(x: 20), width: 1, height: W_Scale(x: 40)))
+        let v3_imagev: UIImageView = UIImageView(frame: CGRect(x: 15, y: W_Scale(10), width: W_Scale(60), height: W_Scale(60)))
+        let line: UIView = UIView(frame: CGRect(x: v3_imagev.maxX+10, y: W_Scale(20), width: 1, height: W_Scale(40)))
         line.backgroundColor = .lightGray
         v3_imagev.image = kGetImage(name: "notice")
         var nolsit = [String]()
@@ -97,7 +112,7 @@ extension HomeViewController{
         }
         
 
-        let cycleLabelsV: CyclePlayView = CyclePlayView(frame:  CGRect(x: line.maxX+10, y: W_Scale(x: 10), width: thirdView.width - line.maxX - 20, height: W_Scale(x: 60)), direction: .bottom)
+        let cycleLabelsV: CyclePlayView = CyclePlayView(frame:  CGRect(x: line.maxX+10, y: W_Scale(10), width: thirdView.width - line.maxX - 20, height: W_Scale(60)), direction: .bottom)
         cycleLabelsV.cycleViewContent = .txtModel
         cycleLabelsV.scroEable = false
         cycleLabelsV.labels = nolsit
@@ -114,13 +129,16 @@ extension HomeViewController{
                 classImagelist.append(pic)
                 titlelist.append(title)
             }
+            classImagelist.append("allClassfy")
+            titlelist.append("全部分类")
         }else
         {
             classImagelist = ["placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder","placeHolder"];
             titlelist = ["","","","","","","","","",""];
             
         }
-        for inx in 0..<classImagelist.count {
+      
+        for inx in 0..<classImagelist.count  {
             let w:CGFloat = secondView.width/5
             let h: CGFloat = secondView.height/2
             let x:CGFloat = w * CGFloat(inx%5)
@@ -152,24 +170,31 @@ extension HomeViewController{
             let w:CGFloat = forthView.width/CGFloat(imagearr1.count)
             let x:CGFloat = w * CGFloat(inx)
             let button = LIButton.init(type: .custom)
-            button.frame = CGRect(x: x, y: 0, width: w, height: W_Scale(x: 120))
+            button.frame = CGRect(x: x, y: 0, width: w, height: W_Scale(120))
             button.setTitle(titlearr1[inx], for: .normal)
             button .setImage(kGetImage(name: imagearr1[inx]), for: .normal)
-            button.imgSize = CGSize(width: W_Scale(x: 70), height: W_Scale(x: 70))
-            button.labelImgOffset = W_Scale(x: 20)
-            button.titleLabel?.font = kSystemFont(font: W_Scale(x: 13))
+            button.imgSize = CGSize(width: W_Scale(70), height: W_Scale(70))
+            button.labelImgOffset = W_Scale(20)
+            button.titleLabel?.font = kSystemFont(font: W_Scale(13))
             let label: UILabel = UILabel()
             label.frame = CGRect(x: x, y: button.maxY, width: w, height: 15)
             label.textAlignment = .center
-            label.font = kSystemFont(font: W_Scale(x: 13))
+            label.font = kSystemFont(font: W_Scale(13))
             label.text = "￥\(contlist[inx])"
             label.textColor = .lightGray
             forthView.addSubview(button)
             forthView.addSubview(label)
             
         }
+        let v4_imageV: UIImageView = UIImageView(image: kGetImage(name: "mine_long"))
+        v4_imageV.frame = CGRect(x: 10, y: forthView.height - 55, width: forthView.width-20, height: 50)
+        forthView.addSubview(v4_imageV)
         
         
+        
+        let lael: UILabel = UILabel(frame: CGRect(x: 10, y: 10, width: fiveView.width - 20, height: 15))
+        lael.text = "热门会员套餐"
+        fiveView.addSubview(lael)
         if self.goodsArray != nil {
             let count: Int = self.goodsArray!.count
             for inx in 0..<count {
@@ -177,7 +202,7 @@ extension HomeViewController{
                 let w:CGFloat = (fiveView.width - 3 * space)/2
                 let h: CGFloat = w/2
                 let x:CGFloat = (w + space) * CGFloat(inx%2)  + space
-                let y:CGFloat  = CGFloat(inx/2)*(h + space) + space
+                let y:CGFloat  = CGFloat(inx/2)*(h + space) + space + lael.maxY + 5
                 let hot: HotComboView = HotComboView(frame: CGRect(x: x, y: y, width: w, height: h))
                 let goodmodel: GoodsListModel = self.goodsArray![inx]
                 hot.label1.text = goodmodel.ProductName
@@ -185,7 +210,6 @@ extension HomeViewController{
                 hot.label1.textColor = .red
                 hot.label2.textColor = .red
                 fiveView.addSubview(hot)
-//                hot.backgroundColor = .red
             }
         }
        

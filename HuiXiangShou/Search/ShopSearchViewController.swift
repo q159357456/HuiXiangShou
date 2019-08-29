@@ -15,6 +15,12 @@ class ShopSearchViewController: BaseViewController {
         let filter: FilterHandelView = FilterHandelView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 60))
         filter.addFuntion(.AllCity) { (data) in
             print(data)
+            guard let city = data as? CityInfo else{
+                return
+            }
+            
+            print(city.cityName! , city.cityCode!)
+            
         }
         
         filter.addFuntion(.Classify) { (data) in

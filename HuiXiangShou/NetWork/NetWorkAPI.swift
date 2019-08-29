@@ -24,6 +24,7 @@ enum ApiManager {
     case SysGetCityInfo(provCode: String, cityName: String)
     case SysGetVillageInfo(townCode: String)
     case SysGetCircleInfo(cityCode: String, townCode: String, circlename: String)
+    case ProductGoodsSpecList(request: String)
 }
 
 
@@ -64,6 +65,8 @@ extension ApiManager: TargetType{
             return "/Sys/GetVillageInfo"
         case .SysGetCircleInfo(_):
             return "/Sys/GetCircleInfo"
+        case .ProductGoodsSpecList(_):
+            return "/Product/GoodsSpecList"
         
         }
         
@@ -91,7 +94,7 @@ extension ApiManager: TargetType{
 
     var task: Task {
         switch self {
-        case .AppUserLoginByPassword(let request),.ShopShopClassifyList(let request), .SysGetNoticeInfo(let request), .ProductGoodsList(let request), .ProductGoodsListByCondition(let request), .SysPlatformAmount(let request),.MemberMemberInfo(let request),.ProductGoodsListByClassify(let request),.ShopShopList(let request):
+        case .AppUserLoginByPassword(let request),.ShopShopClassifyList(let request), .SysGetNoticeInfo(let request), .ProductGoodsList(let request), .ProductGoodsListByCondition(let request), .SysPlatformAmount(let request),.MemberMemberInfo(let request),.ProductGoodsListByClassify(let request),.ShopShopList(let request), .ProductGoodsSpecList(let request):
              return .requestData(request.toData())
         case .LoginStartAD(let key):
             return .requestParameters(parameters: ["imgtype":key, "shopid": "000001"], encoding: URLEncoding.default)
